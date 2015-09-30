@@ -11,10 +11,20 @@ namespace Itway\Repositories\Posts;
 
 use itway\Post;
 use Auth;
+use Illuminate\Contracts\Bus\Dispatcher;
+use itway\Commands\CreatePostCommand;
+use Itway\Validation\Post\PostsFormRequest;
+use Lang;
+
+use itway\Picture;
+use Itway\Uploader\ImageUploader;
 
  class EloquentPostsRepository implements PostsRepository
 {
-
+     public function __construct(Dispatcher $dispatcher, ImageUploader $uploader){
+         $this->dispatcher = $dispatcher;
+         $this->uploader = $uploader;
+     }
     public function perPage()
     {
         return 10;
@@ -77,10 +87,42 @@ use Auth;
         }
         return false;
     }
+
     public function create(array $data)
     {
         return $this->getModel()->create($data);
     }
+
+     public function createPost(PostsFormRequest $request, \Input $input){
+
+         $post = $this->dispatcher->dispatch(
+             new CreatePostCommand(
+                 $request->title,
+                 $request->preamble,
+                 $request->body,
+                 $request->tags_list,
+                 $request->published_at,
+                 $request->localed = Lang::locale()
+             ));
+         $this->bindImage($input, $post);
+
+         return $post;
+     }
+
+     protected function bindImage($input, $post){
+
+         if ($input->hasFile('image')) {
+             // upload image
+             $image = $input->file('image');
+
+             $this->uploader->upload($image, 'images/posts/')->save('images/posts');
+
+             $picture = Picture::create(['path' => $this->uploader->getFilename()]);
+
+             $post->picture()->attach($picture);
+
+         }
+     }
 
     public function countUserPosts(){
 

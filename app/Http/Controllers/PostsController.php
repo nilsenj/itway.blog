@@ -94,6 +94,7 @@ class PostsController extends Controller {
     public function store(PostsFormRequest $request)
     {
 
+        $this->repository->createPost($request, \Input::file('image'));
         $post = $this->dispatch(
             new CreatePostCommand(
                 $request->title,

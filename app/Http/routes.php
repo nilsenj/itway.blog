@@ -114,18 +114,13 @@ Route::group([ 'prefix' => $locale, 'middleware' => 'locale'], function() {
         });
 
           });
-    Route::group(array('prefix' => 'admin', 'middleware' => 'admin'), function () {
-        // main page for the admin section (app/views/admin/dashboard.blade.php)
-        Route::get('/', function () {
-            return view('admin.dashboard');
-        });
+    Route::group(array('prefix' => 'admin', 'middleware' => ['admin', 'auth'], 'as' => 'admin::'), function () {
 
-        // subpage for the posts found at /admin/posts (app/views/admin/posts.blade.php)
-        Route::get('posts', function () {
-            return view('admin.posts');
-        });
 
-        // subpage to create a post found at /admin/posts/create (app/views/admin/posts-create.blade.php)
+        Route::get('/', ['uses' => 'AdminController@index', 'as' => 'dash']);
+
+        Route::get('/posts', ['uses' => 'AdminPostsController@index', 'as' => 'post']);
+
         Route::get('posts/create', function () {
             return view('admin.posts-create');
         });

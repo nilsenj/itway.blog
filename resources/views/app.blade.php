@@ -14,7 +14,7 @@
     {{--</div>--}}
 
 <div>
-    @include('includes.site-location')
+    {{--@include('includes.site-location')--}}
 </div>
 @endif
 <div class="clearfix"></div>

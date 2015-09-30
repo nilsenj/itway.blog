@@ -40,7 +40,7 @@ class Post extends Model implements SluggableInterface, Likeable{
         'columns' => [
             'title' => 120,
             'body' => 50000,
-            'preamble' => 10,
+            'preamble' => 120,
             'users.Facebook' => 2,
             'users.Twitter' => 2,
             'users.Github' => 2,
@@ -48,13 +48,11 @@ class Post extends Model implements SluggableInterface, Likeable{
             'users.name' => 2,
             'users.bio' => 2,
             'users.email' => 2,
-            'tagging_tagged.tag_slug' => 2,
 
         ],
         'joins' => [
-            'users' => ['posts.user_id','users.id'],
-            'tagging_tagged' => ['posts.id', 'tagging_tagged.taggable_id', 'tagging_tagged.taggable_type'=>'itway\\Post']
-        ],
+            'users' => ['posts.user_id','users.id']
+            ]
 
     ];
     protected $dates = ['published_at'];

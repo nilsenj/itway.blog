@@ -4,6 +4,8 @@ namespace Itway\Repositories\Posts;
 
 
 use Itway\Repositories\Repository;
+use Itway\Validation\Post\PostsFormRequest;
+
 /**
  * Created by PhpStorm.
  * User: Ivan
@@ -16,5 +18,6 @@ interface PostsRepository  extends Repository
     public function allOrSearchUsers();
     public function getAllUsers();
     public function countUserPosts();
+    public function createPost(PostsFormRequest $request, \Input $input);
 
 }

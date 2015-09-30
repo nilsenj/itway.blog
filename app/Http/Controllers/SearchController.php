@@ -27,7 +27,7 @@ class SearchController extends Controller
 
             $keywords = $request->get('keywords');
 
-            $search = $this->post->latest('published_at')->published()->search($keywords)->with('user')->with('tagged')->get();
+            $search = $this->post->latest('published_at')->published()->search($keywords, 0, true)->with('user')->get();
 
             return view('pages.search-response', compact('search'));
         }

@@ -36,7 +36,7 @@ $.ItwayIO.options = {
 
     //sockets and event handlers
     host: "http://"+window.location.hostname,
-    socket: io('http://www.itway.io:6378'),
+    socket: io('http://www.itway-blog.io:6378'),
     //-------------------
     notifyBlock: $('.notify'),
     notifyBtn: $('.button-notify'),
@@ -77,6 +77,7 @@ $.ItwayIO.options = {
         //Enable slide over content
         slide: true
     },
+
     //Box Widget Plugin. Enable this plugin
     //to allow boxes to be collapsed and/or removed
     enableBoxWidget: true,
@@ -264,6 +265,7 @@ function _init(o) {
                     '<img class="avatar" src="'+ o.host+'/images/users/'+message.user.photo+'" alt=\"\"></img> ' +
                     '<span class=\"author\">'+message.user.name+'</span> </small>' +
                     '</a></li>');
+
                 o.notifyBlock.data('data-new', 'present');
                 _this.addNotifiedState();
             });
@@ -338,7 +340,7 @@ function _init(o) {
         timer = setTimeout(function(){
 
             $.ajax({
-                url:'http://www.itway.io/search',
+                url:'http://www.itway-blog.io/search',
                 data: {'keywords':$('#search .search-input').val()},
                 method:'post',
                 success: function(markup){
@@ -361,7 +363,7 @@ function _init(o) {
         timer = setTimeout(function(){
 
             $.ajax({
-                url:'http://www.itway.io/getAllExistingTags',
+                url:'http://www.itway-blog.io/getAllExistingTags',
                 method:'post',
                 success: function(markup){
 

@@ -1,159 +1,86 @@
-<?php namespace itway\Http\Controllers;
+<?php
 
+namespace itway\Http\Controllers;
+
+use Illuminate\Http\Request;
 use itway\Http\Requests;
-use itway\User;
-use Itway\Repositories\Users\UserRepository;
-use Input;
-use itway\Role;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Itway\Validation\User\UsersFormRequest;
-use Itway\Validation\User\UsersUpdateFormRequest;
+use itway\Http\Controllers\Controller;
 
-class AdminController extends Controller {
-
-    protected $users;
-
-    public function __construct(UserRepository $repository)
-    {
-        $this->middleware(['auth','admin']);
-        $this->repository = $repository;
-
-    }
+class AdminController extends Controller
+{
     /**
-     * Redirect not found.
+     * Display a listing of the resource.
      *
-     * @return Response
-     */
-    protected function redirectNotFound()
-    {
-        return redirect('admin.users.index');
-    }
-    /**
-     * Display a listing of users
-     *
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $users = $this->repository->allOrSearch(Input::get('q'));
-
-        $no = $users->firstItem();
-
-        return view('admin.users.index', compact('users', 'no'));
+        return view('admin.dashboard');
     }
 
     /**
-     * create user page
+     * Show the form for creating a new resource.
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        $roles = Role::all()->lists('slug', 'id');
-        return view('admin.users.create', compact('roles'));
+        //
     }
 
     /**
-     * store created user
+     * Store a newly created resource in storage.
      *
-     * @param UsersFormRequest $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
-    public function store(UsersFormRequest $request)
+    public function store(Request $request)
     {
-        $data = $request->all();
-        $user = $this->repository->create($data);
-        $user->addRole($request->get('role'));
-        return redirect('admin/users');
+        //
     }
 
     /**
-     * show the user
+     * Display the specified resource.
      *
-     * @param $slug
-     * @return \Illuminate\View\View|Response
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
-        try {
-            $user = User::findBySlug($slug);
-
-            $role = $this->repository->getRole($user);
-
-            return view('admin.users.show', compact('user', 'role'));
-
-        } catch (ModelNotFoundException $e) {
-
-            return $this->redirectNotFound();
-
-        }
+        //
     }
 
     /**
-     * edit page for users
-     * @param $slug
-     * @return \Illuminate\View\View|Response
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
-    public function edit($slug)
+    public function edit($id)
     {
-        try {
-            $user = User::findBySlug($slug);
-
-            $roles = Role::all()->lists('slug', 'id');
-
-            $role = $this->repository->getRole($user);
-
-            return view('admin.users.edit', compact('user', 'roles', 'role'));
-
-        } catch (ModelNotFoundException $e) {
-
-            return $this->redirectNotFound();
-
-        }
+        //
     }
 
     /**
-     * update users data
+     * Update the specified resource in storage.
      *
-     * @param UsersUpdateFormRequest $request
-     * @param $slug
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|Response
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
-    public function update(UsersUpdateFormRequest $request, $slug)
+    public function update(Request $request, $id)
     {
-        try {
-            $data = ! $request->has('password') ? $request->except('password') : $request->all();
-
-            $user = User::findBySlug($slug);
-
-            $user->update($data);
-
-            $user->roles()->sync((array) \Input::get('role'));
-
-            return redirect('admin/users');
-
-        } catch (ModelNotFoundException $e) {
-            return $this->redirectNotFound();
-        }
+        //
     }
 
     /**
+     * Remove the specified resource from storage.
      *
-     * delete user
-     *
-     * @param $slug
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|Response
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
-    public function destroy($slug)
+    public function destroy($id)
     {
-        try {
-            $this->repository->delete($slug);
-
-            return redirect('admin/users');
-
-        } catch (ModelNotFoundException $e) {
-
-            return $this->redirectNotFound();
-        }
+        //
     }
 }
