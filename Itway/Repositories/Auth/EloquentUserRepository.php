@@ -21,12 +21,12 @@ class EloquentUserRepository implements UserContract {
      * @return static
      */
     public function create($data) {
-//        dd($data);
+
         return    $this->dispatchUser($data);
 
     }
     /**
-     * in case Socail Auth or simmple login
+     * in case Socail Auth or simple login
      * @param $data
      * @param $provider
      * @return static
@@ -47,6 +47,8 @@ class EloquentUserRepository implements UserContract {
     }
 
     /**
+     *  dispatch command and binded event to create a new user
+     *
      * @param $data
      * @param null $provider
      * @param null $photo
@@ -68,6 +70,8 @@ class EloquentUserRepository implements UserContract {
 
 
     /**
+     *      just check what changes appeared in login and update users data
+     *
      * @param $data
      * @param $user
      * @param $provider

@@ -11,11 +11,4 @@ return [
     "admin"        =>  "админ",
     "blog"        =>  "блог",
     "create-post"  =>  "создать пост",
-    "pins"        =>  "закладки",
-    "teams"        =>  "комманды",
-    "categories"        =>  "категории",
-    "contact"        =>  "связаться",
-    "inquirer"        =>  "опросник",
-    "job-hunting"        =>  "работа",
-    "idea-show"        =>  "идеи",
 ];

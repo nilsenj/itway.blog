@@ -25,6 +25,7 @@ use Itway\Uploader\ImageUploader;
          $this->dispatcher = $dispatcher;
          $this->uploader = $uploader;
      }
+
     public function perPage()
     {
         return 10;
@@ -74,10 +75,12 @@ use Itway\Uploader\ImageUploader;
     {
         return $this->getModel()->find($id);
     }
+
     public function findBy($key, $value, $operator = '=')
     {
         return $this->getModel()->where($key, $operator, $value)->paginate($this->perPage());
     }
+
     public function delete($id)
     {
         $post = $this->findById($id);
@@ -93,7 +96,7 @@ use Itway\Uploader\ImageUploader;
         return $this->getModel()->create($data);
     }
 
-     public function createPost(PostsFormRequest $request, \Input $input){
+     public function createPost(PostsFormRequest $request, $image){
 
          $post = $this->dispatcher->dispatch(
              new CreatePostCommand(
@@ -104,24 +107,19 @@ use Itway\Uploader\ImageUploader;
                  $request->published_at,
                  $request->localed = Lang::locale()
              ));
-         $this->bindImage($input, $post);
+
+         $this->bindImage($image, $post);
 
          return $post;
      }
 
-     protected function bindImage($input, $post){
+     protected function bindImage($image, $post){
 
-         if ($input->hasFile('image')) {
-             // upload image
-             $image = $input->file('image');
-
-             $this->uploader->upload($image, 'images/posts/')->save('images/posts');
+             $this->uploader->upload($image, config('image.postsDESTINATION'))->save(config('image.postsDESTINATION'));
 
              $picture = Picture::create(['path' => $this->uploader->getFilename()]);
 
              $post->picture()->attach($picture);
-
-         }
      }
 
     public function countUserPosts(){

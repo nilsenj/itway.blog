@@ -19,20 +19,6 @@ Generated via "php artisan localization:missing" at 2015/04/03 12:09:48
     'UpdatePost' => 'Update your post',
     'EP' => 'Edit Post',
     'EditPost' => 'Edit your post',
-    'Ct' => 'Categories',
-    'Categories' => 'The list of tags categories',
-    'Con' => 'Contacts',
-    'Contact' => 'Contact with us',
-    'Pn' => 'Pins',
-    'Pins' =>  'Fnd all your pins & articles!',
-    'Qz' => 'Quiz' ,
-    'Quiz' => 'Raise new topics or Quiz & ask questions!',
-    'Jb' => 'Job-Hunt' ,
-    'Job' => 'Find projects || invite others!',
-    'Tm' => 'Teams',
-    'Teams' => 'Create teams, compete, find partners!',
-    'Id' => 'Idea-Share' ,
-    'Idea' => 'Share ideas with everyone || with your team!',
     'l' => 'Login',
     'Login' =>  'Enter your login!',
     'Ps' => 'Password' ,
@@ -58,6 +44,7 @@ Generated via "php artisan localization:missing" at 2015/04/03 12:09:48
     'noQuizzesFound' => 'please create at least one',
     'yourPhotoUpdated' => 'Your Profile Photo is Updated',
     'liked' => 'You liked this post',
+    'imageError'=>'definitely something went wrong with images!',
 
 
 );

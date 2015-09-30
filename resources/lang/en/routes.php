@@ -11,11 +11,4 @@ return [
     "admin"        =>  "admin",
     "blog"        =>  "blog",
     "create-post"  =>  "create-post",
-    "pins"        =>  "pins",
-    "teams"        =>  "teams",
-    "categories"        =>  "categories",
-    "contact"        =>  "contact",
-    "inquirer"        =>  "inquirer",
-    "job-hunting"        =>  "job-hunting",
-    "idea-show"        =>  "idea-show",
 ];

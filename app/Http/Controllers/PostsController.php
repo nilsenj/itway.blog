@@ -36,6 +36,10 @@ class PostsController extends Controller {
      */
     protected $uploader;
 
+
+    /*TODO needs refactoring with global scopes of variables to be passed to views*/
+
+
     /**
      * @param ImageUploader $uploader
      * @param PostsRepository $repository
@@ -57,14 +61,15 @@ class PostsController extends Controller {
         return redirect()->to(App::getLocale()."/blog")->with(\Flash::error('Post Not Found!!'));
     }
 
-    /**
+    /**show all paginated, localed, published posts
+     *
      * @param Request $request
-     * @param Post $postData
      * @return \Illuminate\View\View
      */
-	public function index( Request $request, Post $postData)
+	public function index( Request $request)
     {
         $posts = $this->repository->allOrSearch($request->get('q'));
+
         $countUserPosts = $this->repository->countUserPosts();
 
             return view('pages.blog', compact('posts','countUserPosts'));
@@ -72,6 +77,8 @@ class PostsController extends Controller {
     }
 
     /**
+     * show create form for posts and pass some data
+     *
      * @return \Illuminate\View\View
      */
     public function create()
@@ -88,32 +95,23 @@ class PostsController extends Controller {
     }
 
     /**
+     * store the posts data in database and bind the image
+     *
      * @param PostsFormRequest $request
      * @return mixed
      */
     public function store(PostsFormRequest $request)
     {
 
-        $this->repository->createPost($request, \Input::file('image'));
-        $post = $this->dispatch(
-            new CreatePostCommand(
-                $request->title,
-                $request->preamble,
-                $request->body,
-                $request->tags_list,
-                $request->published_at,
-                $request->localed = Lang::locale()
-            ));
         if (\Input::hasFile('image')) {
-            // upload image
-            $image = \Input::file('image');
 
-            $this->uploader->upload($image, 'images/posts/')->save('images/posts');
+            $post = $this->repository->createPost($request, \Input::file('image'));
+        }
+        else{
 
-            $picture = Picture::create(['path' => $this->uploader->getFilename()]);
+            Toastr::error(trans('messages.imageError'), $title = Auth::user()->name, $options = []);
 
-            $post->picture()->attach($picture);
-
+            return redirect()->back();
         }
 
         Toastr::success(trans('messages.yourPostCreated'), $title = $post->title, $options = []);
@@ -122,7 +120,9 @@ class PostsController extends Controller {
     }
 
 
-    /**
+    /** show single post and pass some data to views
+     *
+     *
      * @param $slug
      * @param Post $postdata
      * @return \Illuminate\View\View|Response
@@ -132,31 +132,46 @@ class PostsController extends Controller {
 	{
         try {
             $post = $postdata->findBySlugOrId($slug);
+
             $post->view();
+
             $postUser = $post->user_id;
+
             $countUserPosts = $this->repository->countUserPosts();
 
             if($this->searchYoutubeRelated($post->tagNames())) {
+
                 $videos = $this->searchYoutubeRelated($post->tagNames());
             }
-            else $videos = false;
-//            dd($this->youtube->searchVideos($post->tags()));
 
-//            $bookmarked = User::find(Auth::id())->pins()->where('post_id', '=', $post->id)->first();
+            else $videos = false;
 
             if(Auth::user() && Auth::user()->id === $postUser) {
+
                 $createdByUser = true;
+
                 return view('posts.single', compact('post', 'createdByUser','countUserPosts', 'videos'));
             }
             else {
                 $createdByUser = false;
+
                 return view('posts.single', compact('post','createdByUser','countUserPosts', 'videos'));
             }
         } catch (ModelNotFoundException $e) {
+
             return $this->redirectNotFound();
+
         }
 
 	}
+
+    /**
+     * show user's posts
+     *
+     * @param Request $request
+     * @param Post $postData
+     * @return \Illuminate\View\View|Response
+     */
     public function userPosts(Request $request, Post $postData)
 
     {
@@ -179,7 +194,9 @@ class PostsController extends Controller {
                 }
 
             } catch (ModelNotFoundException $e) {
+
                 return $this->redirectNotFound();
+
             }
 
     }
@@ -213,13 +230,18 @@ class PostsController extends Controller {
 
 
         } catch (ModelNotFoundException $e) {
+
             return $this->redirectNotFound();
+
         }
 
 
 	}
 
+    /*TODO needs some refactoring to reduce the whole logic in controller binded to update   -- code smells*/
     /**
+     * update the posts info and data
+     *
      * @param $slug
      * @param PostsUpdateFormRequest $request
      * @return Redirect
@@ -284,24 +306,33 @@ class PostsController extends Controller {
             return redirect()->to(App::getLocale().'/blog/post/'.$updatedPost);
 
         } catch (ModelNotFoundException $e) {
+
             return $this->redirectNotFound();
+
         }
 	}
 
     /**
+     * just deleting posts if the post belongs to user or the user is admin
+     *
      * @param $id
      * @return mixed
      */
 	public function destroy($id)
 	{
-        $post = Post::where('id', '=', $id);
-
-            $post->delete();
+        $this->repository->delete($id);
 
         Toastr::success(Auth::user()->name, $title = 'Your Post deleted successfully! Have a nice day!', $options = []);
 
         return redirect()->to(App::getLocale().'/blog');
 	}
+
+    /**
+     * show the list of posts binded to the selected tags
+     *
+     * @param $slug
+     * @return \Illuminate\View\View
+     */
 
     public function tags($slug) {
 

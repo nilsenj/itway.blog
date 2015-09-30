@@ -15,6 +15,7 @@ return array(
     |
     */
 
-    'driver' => 'gd'
+    'driver' => 'gd',
+    'postsDESTINATION' => 'images/posts/'
 
 );
