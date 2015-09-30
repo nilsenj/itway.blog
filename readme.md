@@ -1,27 +1,14 @@
-## Laravel PHP Framework
+## Laravel sample blog with interesting functionality
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+1. install python --- don't ask why)|
+2. install ruby  --- for scss working correctly)|
+3. install nodejs, gulp(npm install -g gulp), and run npm install
+4. connect to a database just create .env file from .env.example file and insert your values
+5. in .env file you have to add keys for socialite module(social registration and login) and regiter your app in facebook, vk, google
+6. to have a nice look(necessary) in single post showcase add also youtube key to show the list of videos for post tags
+7. after everything is done don't relax --- we haven't done yet.
+8. to have availability of asynchronous features such as new post created and user was registered event install redis and then launch it and run node socket.js
+9. that's it you have availability to use events.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
-
-## Official Documentation
-
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+#Maybe I've misspelled somewhere or forget to include something(
