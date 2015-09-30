@@ -1,0 +1,45 @@
+//
+// Close icons
+// --------------------------------------------------
+
+
+.close {
+  float: right;
+  font-size: ($font-size-base * 1);
+  font-weight: normal;
+  line-height: 1;
+  color: $red-color;
+  opacity:.75;
+  padding: 3px 5px;
+  margin-left: 3px;
+  margin-right: 3px;
+  border-radius: 100%;
+  background-color: white;
+  margin-top: 5px;
+
+  &:hover,
+  &:focus {
+    color: $red-color;
+    text-decoration: none;
+    cursor: pointer;
+    opacity:.9;
+  }
+
+  // [converter] extracted button& to button.close
+}
+
+// Additional properties for button version
+// iOS requires the button element instead of an anchor tag.
+// If you want the anchor version, it requires `href="#"`.
+// See https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+button.close {
+  padding: 3px 8px;
+  cursor: pointer;
+  border: 0;
+  -webkit-appearance: none;
+  border-radius: 100%;
+  background-color: white;
+  margin-top: 10px;
+  margin-right: 10px;
+  outline: none;
+}

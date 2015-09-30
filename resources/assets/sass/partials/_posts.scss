@@ -1,0 +1,113 @@
+.posts {
+  display: inline-block;
+  margin-bottom: 0!important;
+  margin-top: 0!important;
+  padding:0;
+  float: left;
+  position: relative;
+  width: 100%;
+
+  .post {
+
+    box-sizing: border-box;
+    list-style-type: none;
+    background-color: $main-color;
+    box-shadow: 0 0 3px rgba(0,0,0, .12),
+    0 1px 2px rgba(0,0,0, .24) ;
+    display: inline-block;
+    padding:5px 10px;
+    overflow: hidden;
+    word-break: break-all;
+
+    .post-title {
+      color: darken($primary-color, 10%);
+      font-size: $font-size-base*0.75;
+      padding:5px 5px;
+      font-weight: bold;
+      background-color: #f8f8f8;
+
+      word-wrap: break-word;
+      margin-right: 0px;
+      z-index: 1;
+
+    }
+
+    .post-image {
+      text-align: left;
+      margin-top: 15px;
+    }
+    .button-nav-post {
+      text-align: right;
+      float:right;
+      .button {
+        background-color: transparent;
+        border: transparent;
+      }
+    }
+    .post-text {
+      font-size: $font-size-base*0.9;
+      margin-top: 10px;
+    }
+    .read-post {
+      margin-top:10px;
+      float: right;
+    }
+    .post-time {
+      margin-top:10px;
+    }
+  }
+  .tag-block {
+    //padding: 10px;
+    //width:50%;
+    float: right;
+
+  }
+  .post-author {
+    display: inline-flex;
+    //width: 50%!important;
+    padding: 10px;
+
+    .avatar {
+      border-radius: 100%;
+      float: left;
+      vertical-align: middle;
+      width: 34px;
+      height: 34px;
+    }
+    .name {
+      font-weight: bold;
+      text-align: right;
+      color: $dark-color;
+      margin-left: 5px;
+    }
+  }
+}
+
+.tags {
+  margin-top: 1px;
+  .tag-name {
+    background: none repeat scroll 0 0 $primary-color;
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    white-space: nowrap;
+    margin: 5px 10px 0 0;
+    background-color:  $primary-color;
+    padding: 3px 3px;
+    padding-left: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    &:hover {
+      color: darken($primary-color, 20%);
+    }
+    span {
+      background: none repeat scroll 0 0 #6b8a99;
+      border-radius: 2px 0 0 2px;
+      margin-right: 5px;
+      padding: 3px 10px 3px;
+    }
+  }
+
+}

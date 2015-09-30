@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: itway
+        psr4_prefix: itway
+        src_path: app

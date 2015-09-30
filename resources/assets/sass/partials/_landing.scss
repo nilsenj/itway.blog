@@ -1,0 +1,172 @@
+.landing {
+  display: block;
+  position: relative;
+  width: 100%;
+  min-height:300px;
+
+  .header {
+    display: block;
+//    padding: 0 10%;
+//    position: relative;
+    i{ position: absolute; color: rgba(255,255,255,0.2); font-size: 60px;}
+  }
+  .landing-text {
+    font-size: $font-size-base*2;
+    font-weight: bold;
+    color: white;
+    padding-top: 5%;
+    .subtext {
+      font-size: $font-size-base*1.2;
+      color: rgba(255,255,255,0.5);
+    }
+  }
+
+}
+.landing-story {
+  padding: 2% 15%;
+  display: block;
+  .line {
+    display: block;
+    height:5px;
+    border-bottom: 2px solid lighten($grey-color, 10%);
+  }
+  .step-1,.step-2,.step-3,.step-4,.step-5 {
+    display: inline-block;
+    min-height: 200px;
+    float: left;
+    h4 {
+      width: auto;
+      color: $bluegrey-color;
+      font-weight: bold;
+    }
+    i {
+
+    }
+    .landing-side {
+
+    }
+
+  }
+  .landing-icon-side {
+
+   i{font-size: $font-size-base*4;
+     color:lighten(#353e49, 13%);
+     width: 100px;
+     text-shadow: 2px 0px 1px $dark-color;
+   }
+    text-align: center;
+    display: block;
+    float: right;
+    min-height: 150px;
+    width: 100%;
+    line-height: 1.5rem;
+    padding-top: 0.66667rem;
+    padding-bottom: 0.66667rem;
+    position: absolute;
+    span {  margin:0 auto; font-size: $font-size-base*4;
+     }
+  }
+  }
+.language-info {
+  position: absolute;
+  top: -5px;
+  font-size: 10px;
+  color: $grey-color;
+}
+.absolute-lang {
+  position: absolute;
+  right: 10px;
+  z-index: 1;
+}
+.bg-land-side {
+  margin: 0 auto;
+.icon-pencil-square {
+  margin-left: 5px;
+}
+  .button {
+    margin: 0 0;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+  }
+}
+@include screen(320px, 640px) {
+  .landing {
+    padding: 14% 0 5% 0;
+    .header {
+      i{
+        font-size: 24px;
+      }
+    }
+  }
+  .landing-text {
+
+    font-size: 18px!important;
+  }
+  .subtext {
+    font-size: 16px!important;
+
+  }
+
+
+}
+@include screen(640px, 768px) {
+   .landing {
+     padding: 10% 0 5% 0;
+     .header {
+       i{
+         font-size: 28px;
+       }
+     }
+   }
+   .landing-text {
+
+     font-size: 22px!important;
+   }
+   .subtext {
+     font-size: 20px!important;
+
+   }
+
+
+ }
+@include screen(768px, 1024px) {
+  .landing {
+    padding: 6% 0 5% 0;
+    .header {
+      i{
+        font-size: 36px;
+      }
+    }
+  }
+  .landing-text {
+
+    font-size: 26px!important;
+  }
+  .subtext {
+    font-size: 22px!important;
+
+  }
+
+
+}
+@include screen(1024px,1280px) {
+  .landing {
+    padding: 3% 0 5% 0;
+    .header {
+      i{
+        font-size: 38px;
+      }
+    }
+  }
+  .landing-text {
+
+    font-size: 30px!important;
+  }
+  .subtext {
+    font-size: 26px!important;
+
+  }
+
+
+}

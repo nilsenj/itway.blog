@@ -1,0 +1,44 @@
+.panel {display: none;
+
+  z-index: 1000;
+  border-bottom: 3px solid #566f7c;
+  background-color: #7b96a3;
+  width:100%;
+  padding-bottom: 10px;
+
+}
+
+.notifier-panel {
+  display:block;
+  float: right;
+
+}
+.notify-button {
+border: none;
+  background: transparent;
+}
+
+.error {
+    padding-top: 5px;
+    border-bottom: 3px solid $red-color;
+    background-color: #a94442;
+  color:$danger-color;
+  margin: 0 auto 10px auto;
+
+  }
+
+.success {
+  color:$success-color;
+  padding-top: 5px;
+  border-bottom: 3px solid $green-color;
+  background-color: darken(#dff0d8, 10%);
+  margin: 0 auto 10px auto;
+}
+.info {
+  margin: 0 auto 10px auto;
+  color:white;
+  padding-top: 5px;
+  border-bottom: 3px solid darken($bluegrey-color, 5%);
+  background-color: lighten($bluegrey-color, 10%);
+
+}

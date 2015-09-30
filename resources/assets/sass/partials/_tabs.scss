@@ -1,0 +1,17 @@
+.tab-pane {
+
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.action-tab-list.active{
+
+  a{
+
+    border-bottom: 2px inset #90a4ae !important;
+  }
+
+}

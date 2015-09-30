@@ -1,0 +1,113 @@
+
+.block {
+
+  .header {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    -webkit-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
+
+    .title {
+
+      padding: 3px 3px;
+      display: inline-block;
+      width: 100%;
+      .button, button, input[type=button] {
+        float: right;
+        display: block;
+        padding: 0 5px;
+        line-height: inherit;
+        height: inherit !important;
+        box-shadow: none;
+        border-radius: 1px;
+        margin: 0;
+        margin-left: 1px;
+        margin-right: 1px;
+        &:hover, &:focus, &:active {
+          outline: 0;
+        }
+      }
+    }
+    .header-content {
+      .img , img{
+        max-width:100%;
+        max-height:100%;
+        min-width:100%;
+        clear: both;
+        vertical-align: middle;
+        text-align: center;
+      }
+
+      .secondary-text {
+
+      }
+    }
+  }
+  .content {
+    border-left: 1px solid #DCDCDC;
+    border-right: 1px solid #DCDCDC;
+    border-bottom: 1px solid #DCDCDC;
+    .footer {
+      display: inline-block;
+      width: 100%;
+      padding: 5px 3px;
+    }
+    .img , img{
+      max-width:100%;
+      max-height:100%;
+      min-width:100%;
+      clear: both;
+      vertical-align: middle;
+      text-align: center;
+    }
+    p{padding: 3px 5px}
+
+  }
+//  //still doesn't work
+//
+//    @each $color in blue-grey, green, light-blue, light-blue, orange, red, lime, brown, amber, cyan, deep-orange, deep-purple, grey, light-green, light-blue, purple, teal, yellow, indigo, dark  {
+//    &.#{$color} {
+//      @import "../../../color-schemas/#{$color}";
+//      @include block-variant($darkPrimaryColor, $primaryTextColor, $textPrimaryColor, $primaryColor, $lightPrimaryColor, $secondaryTextColor, $accentColor, $dividerColor);
+//    }
+//  }
+
+// default colors
+  &.branding {
+    @import "../../../color-schemas/_branding";
+    @include block-variant($darkPrimaryColor, $primaryTextColor, $textPrimaryColor, $primaryColor, $lightPrimaryColor, $secondaryTextColor, $accentColor, $dividerColor);
+  }
+  &.primary {
+    @import "../../../color-schemas/_blue-grey";
+    @include block-variant($darkPrimaryColor, $primaryTextColor, $textPrimaryColor, $primaryColor, $lightPrimaryColor, $secondaryTextColor, $accentColor, $dividerColor);
+  }
+
+  &.success {
+    @import "../../../color-schemas/_green";
+    @include block-variant($darkPrimaryColor, $primaryTextColor, $textPrimaryColor, $primaryColor, $lightPrimaryColor, $secondaryTextColor, $accentColor, $dividerColor);
+  }
+
+  &.info {
+    @import "../../../color-schemas/_light-blue";
+    @include block-variant($darkPrimaryColor, $primaryTextColor, $textPrimaryColor, $primaryColor, $lightPrimaryColor, $secondaryTextColor, $accentColor, $dividerColor);
+  }
+
+  &.warning {
+    @import "../../../color-schemas/_orange";
+    @include block-variant($darkPrimaryColor, $primaryTextColor, $textPrimaryColor, $primaryColor, $lightPrimaryColor, $secondaryTextColor, $accentColor, $dividerColor);
+  }
+
+  &.danger {
+    @import "../../../color-schemas/_red";
+    @include block-variant($darkPrimaryColor, $primaryTextColor, $textPrimaryColor, $primaryColor, $lightPrimaryColor, $secondaryTextColor, $accentColor, $dividerColor);
+  }
+
+  // grey
+  &.grey {
+    @import "../../../color-schemas/_grey";
+    @include block-variant($darkPrimaryColor, $primaryTextColor, $textPrimaryColor, $primaryColor, $lightPrimaryColor, $secondaryTextColor, $accentColor, $dividerColor);
+  }
+  &.dark {
+    @import "../../../color-schemas/_dark";
+    @include block-variant($darkPrimaryColor, $primaryTextColor, $textPrimaryColor, $primaryColor, $lightPrimaryColor, $secondaryTextColor, $accentColor, $dividerColor);
+  }
+}

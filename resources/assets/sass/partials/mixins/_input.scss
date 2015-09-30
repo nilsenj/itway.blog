@@ -1,0 +1,18 @@
+@mixin input($parent,  $padding-vertical, $padding-horizontal, $font, $line-height,$border, $border-radius) {
+  #{$parent} {
+    padding: $padding-vertical $padding-horizontal;
+    font: $font;
+    line-height: $line-height;
+    border-radius: $border-radius;
+    border: $border;
+
+  }
+  label {  padding: ($padding-vertical*2) $padding-horizontal;
+    font: $font;
+    line-height: $line-height;}
+
+  textarea#{$parent},
+  select[multiple]#{$parent} {
+    height: auto;
+  }
+}

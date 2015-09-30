@@ -1,0 +1,69 @@
+// Lime
+.button-lime {
+  @import "color-schemas/_lime";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+
+// Brown
+.button-brown {
+  @import "color-schemas/_brown";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+
+// Amber
+.button-amber {
+  @import "color-schemas/_amber";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+
+
+// cyan
+.button-cyan {
+  @import "color-schemas/_cyan";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+// deep-orange
+.button-deep-orange {
+  @import "color-schemas/_deep-orange";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+// deep-purple
+.button-deep-purple {
+  @import "color-schemas/_deep-purple";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+// light-green
+.button-light-green {
+  @import "color-schemas/_light-green";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}// light-blue
+.button-light-blue {
+  @import "color-schemas/_light-blue";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+// purple
+.button-purple {
+  @import "color-schemas/_purple";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+
+// teal
+.button-teal {
+  @import "color-schemas/_teal";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+// yellow
+.button-yellow {
+  @import "color-schemas/_yellow";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+// indigo
+.button-indigo {
+  @import "color-schemas/_indigo";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+// indigo
+.button-transparent-white {
+  @import "color-schemas/_transparent-white";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}

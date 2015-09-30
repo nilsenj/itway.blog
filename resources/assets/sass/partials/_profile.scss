@@ -1,0 +1,85 @@
+.profile-img-block {
+
+  width: 100%;
+  padding: 20px 0;
+  background-color: $button-default-bg;
+
+}
+.user-block {
+
+  width: 100%;
+  padding: 0 5px;
+  background-color: $button-default-bg;
+
+}
+.profile-img{
+
+  border-radius: 3px;
+  border: 3px solid white;
+  width: 100px;
+  height: 100px;
+
+}
+
+.profile-bio,.links-user-block {
+
+  width: 100%;
+  padding: 20px 15px;
+  background-color: $button-default-bg;
+  color: $primary-color;
+
+}
+
+.user-info-block {
+
+
+  border-left: 4px solid lighten($primary-color, 5%);
+
+}
+
+.user-img {
+
+  display: inline-flex;
+  //width: 50%!important;
+  padding: 10px;
+
+  .avatar {
+    border-radius: 100%;
+    float: left;
+    vertical-align: middle;
+    width: 34px;
+    height: 34px;
+  }
+  .name {
+    font-weight: bold;
+    text-align: right;
+    color: $dark-color;
+    margin-left: 5px;
+  }
+}
+.user {
+  display: inline-block;
+  background-color: white;
+  margin-bottom: 10px;
+
+}
+.additional-user-info {
+
+  padding: 20px 15px;
+  background-color: $button-default-bg;
+  color: $primary-color;
+
+}
+.user-info-title {
+  font-size: medium;
+  &.b {
+    font-size: large;
+    font-weight: bold;
+
+  }
+}
+.user-tags-block {
+  padding: 20px 15px;
+  background-color: $button-default-bg;
+  color: $primary-color;
+}

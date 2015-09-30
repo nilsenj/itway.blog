@@ -1,0 +1,307 @@
+.button {
+  /* Structure */
+  display: inline-block;
+  *display: inline;
+  /*IE 6/7*/
+  zoom: 1;
+  line-height: normal;
+  white-space: nowrap;
+  vertical-align: baseline;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-height: 1em;
+  outline: none;
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+  font-family: 'Source Sans Pro', sans-serif, Arial, Helvetica;
+  font-size: 100%;
+  *font-size: 90%;
+  /*IE 6/7 - To reduce IE's oversized button text*/
+  *overflow: visible;
+  /*IE 6/7 - Because of IE's overly large left/right padding on buttons */
+  padding: $button-pudding;
+  margin: $button-margin;
+  color: $button-default-color;
+  /* rgba not supported (IE 8) */
+  /* rgba supported */
+  *color: $button-default-color;
+  /* IE 6 & 7 */
+  border: 1px solid $button-default-border;
+  /*IE 6/7/8*/
+  /*IE9 + everything else*/
+  transition: all 200ms;
+  background-color: $main-color;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: $button-border-radius;
+  &:hover {
+    color: darken($button-default-color,10%);
+    background-color: darken($button-default-bg, 10%);
+  }
+  &.button-raised {
+    transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    &:hover:not(.button-link) {
+
+      @extend .shadow-z-2-hover;
+    }
+    &:active:not(.button-link) {
+      @extend .shadow-z-3;
+    }
+    .button:not([class*="button-"]), .button-default {
+      &:hover {
+        background-color: darken($button-default-bg, 10%);
+      }
+    }
+    .button-link, .button:not([class*="button-"]), .button-default {
+      color: $button-default-color;
+      border: 1px solid $button-default-border;
+      &:hover {
+        color: darken($button-default-color,10%);
+      }
+    }
+  }
+  &.active {
+    color: darken($button-default-color,10%);
+    background-color: darken($button-default-bg, 10%);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: darken($button-default-color,10%);
+  }
+  &:hover,
+  &:focus {
+    color: darken($button-default-color,10%);
+    background-color: darken($button-default-bg, 10%);
+  }
+
+}
+
+
+/* Firefox: Get rid of the inner focus border */
+
+/*csslint outline-none:false*/
+
+.button {
+  &[disabled] {
+    color: $button-default-color;
+    background-color: $button-default-bg;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    filter: alpha(opacity = 40);
+    -khtml-opacity: 0.40;
+    -moz-opacity: 0.40;
+    opacity: 0.40;
+    padding: $button-pudding;
+    margin: $button-margin;
+    cursor: not-allowed;
+    box-shadow: none!important;
+    &:hover, &:focus, &:active {
+      outline:0;
+      box-shadow: none!important;
+      color: $button-default-color;
+      background-color: $button-default-bg;
+      padding: $button-pudding;
+      margin: $button-margin;
+    }
+  }
+
+}
+
+.button-disabled {
+  background-image: none;
+  color: $button-default-color;
+  background-color: $button-default-bg;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  filter: alpha(opacity = 40);
+  -khtml-opacity: 0.40;
+  -moz-opacity: 0.40;
+  opacity: 0.40;
+  cursor: not-allowed;
+  box-shadow: none!important;
+  padding: $button-pudding;
+  margin: $button-margin;
+  &:hover, &:focus, &:active {
+    color: $button-default-color;
+    background-color: $button-default-bg;
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    filter: alpha(opacity = 40);
+    -khtml-opacity: 0.40;
+    -moz-opacity: 0.40;
+    opacity: 0.40;
+    padding: $button-pudding;
+    margin: $button-margin;
+    cursor: not-allowed;
+    box-shadow: none!important;
+  }
+}
+
+.button-hidden {
+  display: none;
+}
+
+/* Firefox: Get rid of the inner focus border */
+
+.button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+.button-link {
+  color: $link-color;
+  font-weight: normal;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &.active,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: underline;
+    background-color: transparent;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus {
+      color: $link-hover-color;
+      text-decoration: none;
+      opacity: 0.8;
+    }
+  }
+}
+.button-branding {
+  @import "color-schemas/_branding";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+
+.button-default {
+  @include button-variant($button-default-color, $button-default-bg, $button-default-border);
+}
+.button-primary {
+  @import "color-schemas/_blue-grey";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+
+// Success appears as green
+.button-success {
+  @import "color-schemas/_green";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+
+// Info appears as blue-green
+.button-info {
+  @import "color-schemas/_light-blue";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+// Warning appears as orange
+.button-warning {
+  @import "color-schemas/_orange";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+// Danger and error appear as red
+.button-danger {
+  @import "color-schemas/_red";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+
+// grey
+.button-grey {
+  @import "color-schemas/_grey";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+
+// dark
+.button-dark {
+  @import "color-schemas/_dark";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+
+// Button Sizes
+// --------------------------------------------------
+
+.button-l {
+  // line-height: ensure even-numbered height of button next to large input
+  @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
+}
+.button-s {
+  // line-height: ensure proper height of button next to small input
+  @include button-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
+}
+.button-xs {
+  @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small, $line-height-small, $border-radius-small);
+}
+
+
+// Block button
+// --------------------------------------------------
+
+.button-block {
+  display: block;
+  width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.button-block + .button-block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.button-block {
+    width: 100%;
+  }
+}
+.site-buttons {
+  display: block;
+  li {
+    display: inline-block;
+  }
+}
+.confirm.button {
+  margin: 0 auto;
+}
+.nav-buttons {
+  display: block;
+  width: 100%;
+
+
+  .button {
+    font-size: small;
+    padding: 5px 10px;
+
+    &.rounded {
+
+      padding: 5px 10px;
+      border-radius: 50%;
+
+    }
+
+    &:active, &:hover, &.active {
+
+
+    }
+
+  }
+}

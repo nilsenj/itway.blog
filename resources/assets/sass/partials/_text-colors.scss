@@ -1,0 +1,37 @@
+.text-primary {
+  @include text-color($primary-color);
+}
+.text-white {
+  @include text-color(white);
+}
+.text-danger {
+  @include text-color($red-color);
+}
+.text-warning {
+  @include text-color($deeporange-color);
+}
+.text-success {
+  @include text-color($green-color);
+}
+
+.text-info {
+  @include text-color($cyan-color);
+}
+.text-vk {
+  @include text-color(#36638e);
+}
+.text-facebook {
+  @include text-color($facebook);
+}
+.text-google {
+  @include text-color($google);
+}
+.text-twitter {
+  @include text-color($twitter);
+}
+.text-github {
+  @include text-color($github);
+}
+.text-grey {
+  @include text-color($grey-color);
+}

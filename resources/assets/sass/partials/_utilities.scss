@@ -1,0 +1,72 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+// Floats
+// -------------------------
+.clearfix {
+  @include clearfix;
+}
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-block {
+  @include center-block;
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+
+
+// Toggling content
+// -------------------------
+
+// Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}
+
+.text-hide {
+  @include text-hide;
+}
+
+
+// Hide from screenreaders and browsers
+//
+// Credit: HTML5 Boilerplate
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+
+// For Affix plugin
+// -------------------------
+
+.affix {
+  position: fixed;
+}
+.line.warning {
+
+  border-bottom: 2px solid $warning-color;
+}
+.line.danger {
+
+  border-bottom: 2px solid $danger-color;
+}.line.dark {
+
+  border-bottom: 2px solid $dark-color;
+}

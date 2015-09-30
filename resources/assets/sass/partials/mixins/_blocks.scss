@@ -1,0 +1,63 @@
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+@mixin block-variant($darkPrimaryColor,$primaryTextColor, $textPrimaryColor, $primaryColor, $lightPrimaryColor, $secondaryTextColor, $accentColor, $dividerColor) {
+  color:$primaryTextColor;
+  .header {
+    color: $textPrimaryColor;
+    background-color: $primaryColor;
+    .title{
+      background-color:  $darkPrimaryColor;
+      color: $textPrimaryColor;
+
+      .button, button, input[type=button]{
+        background-color: lighten($primaryColor,2%);
+        border: solid $primaryColor 1px;
+        color:$textPrimaryColor;
+        &:hover {
+          color:$lightPrimaryColor;
+        }
+        &:focus {
+          color:$lightPrimaryColor;
+        }
+      }
+    }
+    .header-content {
+      color: $textPrimaryColor;
+      .secondary-text{
+        color: $lightPrimaryColor;
+      }
+    }
+  }
+  .content{
+    background-color: $block-content-bg ;
+    color: $primaryTextColor;
+    i,span {
+      color:$secondaryTextColor;
+    }
+    i.colored[class*="icon-"], span.colored[class*="icon-"]
+    {
+      color: lighten($accentColor,5%);
+    }
+    p {
+      color: $primaryTextColor;
+    }
+    em, small, .secondary-text{
+      color:$secondaryTextColor;
+    }
+    a {
+      color: lighten($accentColor,5%);
+      &:hover, &:focus, &:active {
+        text-decoration: underline;
+        color: darken($accentColor, 5%);
+      }
+    }
+    .footer {
+      border-top:1px solid $dividerColor;
+
+    }
+
+  }
+}

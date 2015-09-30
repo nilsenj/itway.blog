@@ -1,0 +1,91 @@
+
+//
+// Grid system
+// --------------------------------------------------
+
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+
+//Look for _grid-helper-mixins.scss if you want to customize it
+
+.container {
+  @include container-fixed;
+
+  @media (min-width: $screen-s-min) {
+    width: $container-s;
+  }
+  @media (min-width: $screen-m-min) {
+    width: $container-m;
+  }
+  @media (min-width: $screen-l-min) {
+    width: $container-l;
+  }
+  @media (min-width: $screen-ml-min) {
+    width: $container-ml;
+  }
+  @media (min-width: $screen-xl-min) {
+      width: $container-xl;
+  }
+}
+
+
+// Fluid container
+//
+// Utilizes the mixin meant for fixed width containers, but without any defined
+// width for fluid, full width layouts.
+
+.container-fluid {
+  @include container-fixed;
+}
+
+
+// Row
+//
+// Rows contain and clear the floats of your columns.
+
+.row {
+  @include make-row;
+}
+
+
+// Columns
+//
+// Common styles for sall and large grid columns
+
+@include make-grid-columns;
+
+
+// Extra sall grid
+//
+// Columns, offsets, pushes, and pulls for extra sall devices like
+// sartphones.
+
+@include make-grid(xs);
+
+
+// sall grid
+//
+// Columns, offsets, pushes, and pulls for the sall device range, from phones
+// to tablets.
+
+@media (min-width: $screen-s-min) {
+  @include make-grid(s);
+}
+
+
+// Medium grid
+//
+// Columns, offsets, pushes, and pulls for the desktop device range.
+
+@media (min-width: $screen-m-min) {
+  @include make-grid(m);
+}
+
+// Large grid
+//
+// Columns, offsets, pushes, and pulls for the large desktop device range.
+
+@media (min-width: $screen-l-min) {
+  @include make-grid(l);
+}

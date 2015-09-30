@@ -1,0 +1,24 @@
+.navbar-fixed-top, .navbar-fixed-bottom {
+  position: fixed;  right: 0;  left: 0;
+  z-index: 999;
+  text-align: center;
+  li {
+    display: inline-block;
+    padding: 5px 10px;
+  }
+}
+ // Undo the rounded corners @media (min-width: $grid-float-breakpoint) {  border-radius: 0;  } }
+.navbar-fixed-top {
+  top: 0;
+  border-width: 0 0 1px;
+}
+.navbar-fixed-bottom {
+  bottom: 0;
+  margin-bottom: 0; // override .navbar defaults
+  border-width: 1px 0 0;
+}
+.navbar-fixed-bottom {
+  bottom: 0;
+  margin-bottom: 0; // override .navbar defaults
+  border-width: 1px 0 0;
+}

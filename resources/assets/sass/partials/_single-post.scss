@@ -1,0 +1,125 @@
+.single-post {
+
+  box-sizing: border-box;
+  list-style-type: none;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0, .12),
+  0 1px 2px rgba(0,0,0, .24) ;
+  display: inline-block;
+  padding:5px 10px;
+  overflow: hidden;
+  width:100%;
+  .first-line {
+    margin-bottom: 20px;
+    display: inline-block;
+    position: relative;
+    float: left;
+    height: auto;
+    line-height: inherit;
+    width: 100%;
+  }
+  .header-title {
+    margin: 10px 0;
+    word-break: break-all;
+  }
+  .image-area {
+    .presc-wrapper {
+      display: inline-flex;
+      position: relative;
+      clear: both;
+    }
+    display: inherit;
+    height: inherit;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    width: 100%;
+    right: 0;
+    .post-image {
+      text-align: left;
+      margin-top: 15px;
+      width: 100%;
+    }
+    .prescription {
+      padding-top: 10px;
+      text-align: center;
+    }
+  }
+  .button-rounded {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin: 0;
+    i {
+      margin: 0 auto;
+    }
+  }
+  .button-nav-post {
+
+
+    .button {
+      background-color: transparent;
+      border: transparent;
+    }
+  }
+
+  .post-text {
+    font-size: $font-size-base*0.8;
+    margin-top: 10px;
+    padding: 5px 10%;
+    word-break: normal;
+
+  }
+  .time {
+    margin-top:10px;
+    color:$grey-color;
+  }
+
+  .post-author {
+    display: inline-flex;
+    width: 100%;
+    height: 50px;
+    float: left;
+
+    .avatar {
+        height: 50px;
+        width: 50px;
+        margin:0;
+        vertical-align: text-top;
+        border-radius: 100%;
+        float: left;
+    }
+    .name {
+      font-weight: bold;
+      text-align: right;
+      color: $dark-color;
+      margin-left: 5px;
+    }
+  }
+  .counters {
+    line-height: 1.875rem;
+    padding-top: 0.83333rem;
+    padding-bottom: 0.83333rem;
+   border-bottom: 2px solid $primary-color;
+   border-top: 2px solid $primary-color;
+    width: auto;
+    font-size: 26px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline;
+
+    a,i{
+
+      padding: 5px;
+
+    }
+
+  }
+  #post-videos {
+    div {
+      margin-bottom: 5px!important;
+    }
+    div:last-child{
+      margin-bottom: 10px;
+    }
+  }
+}

@@ -1,0 +1,222 @@
+//core variables
+
+$body-text-color: #555;
+$body-background: #353e49;
+$light-bg:#fff;
+$dark-bg:#555;
+$content-bg: #fff;
+$container-margin: 5px;
+$main-color: #f8f8f8 !default;
+
+
+// Typesetting variables. Edit these!
+
+$font-size-base:          20px !default;
+$font-size-large:         ceil(($font-size-base * 1.25)) !default; //
+$font-size-small:         ceil(($font-size-base * 0.85)) !default; //
+$baseLineHeight:          1.5; // how large the line height is as a multiple of font size
+$leading:                 $baseLineHeight * 1rem;
+// Rate of growth for headings
+// I actually like this to be slightly smaller then the leading. Makes for tight headings.
+$scale:                   1.414;
+
+
+
+
+$padding-base-vertical:     6px !default;
+$padding-base-horizontal:   12px !default;
+
+$padding-large-vertical:    10px !default;
+$padding-large-horizontal:  16px !default;
+
+$padding-small-vertical:    5px !default;
+$padding-small-horizontal:  10px !default;
+
+$padding-xs-vertical:       1px !default;
+$padding-xs-horizontal:     5px !default;
+
+$line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
+$line-height-small:         1.5 !default;
+
+$border-radius-base:        2px !default;
+$border-radius-large:       4px !default;
+$border-radius-small:       1px !default;
+
+$default-margin:            0.5em 0.1em 0.5em 0em;
+$default-padding:           0.18571em 0.8em 0.18571em;
+$line-height-base:        1.428571429 !default; // 20/14
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+//------------------------------------
+// block core variables
+$blockConfirm: true;
+
+$block-content-bg: #FAFAFA;
+
+//------------------------------------
+
+
+//_____________Colors________________
+
+$amber-color:#FFC107;
+$bluegrey-color: #607D8B;
+$brown-color: #795548;
+$cyan-color: #00BCD4;
+$deeporange-color: #FF5722;
+$deeppurple-color: #673AB7;
+$green-color: #4CAF50;
+$grey-color: #9E9E9E;
+$indigo-color: #3F51B5;
+$lightgreen-color: #8BC34A;
+$lightblue-color: #03A9F4;
+$lime-color: #CDDC39;
+$orange-color: #FF9800;
+$purple-color: #9C27B0;
+$red-color: #F44336;
+$teal-color: #009688;
+$yellow-color: #FFEB3B;
+$dark-color:   darken(#555, 5%);
+$facebook:#3b5998;
+$google:#dd4b39;
+$twitter:#55acee;
+$github:#999999;
+$danger-color: $red-color;
+$warning-color: $orange-color;
+$success-color: $green-color;
+$info-color: $lightblue-color;
+$primary-color: $bluegrey-color;
+$link-color: $primary-color;
+//_____________________End of Colors_____________
+
+
+//---------------------------------------------
+
+
+//___________GRID VARIABLES________________
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+// Extra small screen / phone
+$screen-xs:                  480px !default;
+
+$screen-xs-min:              $screen-xs !default;
+
+$screen-phone:               $screen-xs-min !default;
+
+// small screen / tablet
+
+$screen-s:                  768px !default;
+$screen-s-min:              $screen-s !default;
+$screen-tablet:              $screen-s-min !default;
+
+// Medium screen / desktop
+$screen-m:                  992px !default;
+$screen-m-min:              $screen-m !default;
+$screen-desktop:             $screen-m-min !default;
+
+// Large screen / wide desktop
+$screen-l:                  1200px !default;
+$screen-l-min:              $screen-l !default;
+$screen-l-desktop:          $screen-l-min !default;
+
+// Large screen / wide desktop
+$screen-ml:                  1400px !default;
+$screen-ml-min:              $screen-ml !default;
+$screen-ml-desktop:          $screen-ml-min !default;
+
+// Large screen / wide desktop
+$screen-xl:                  1600px !default;
+$screen-xl-min:              $screen-xl !default;
+$screen-xl-desktop:          $screen-xl-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-s-min - 1) !default;
+$screen-s-max:              ($screen-m-min - 1) !default;
+$screen-m-max:              ($screen-l-min - 1) !default;
+$screen-l-max:              ($screen-ml-min - 1) !default;
+$screen-ml-max:              ($screen-xl-min - 1) !default;
+
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+$grid-columns:              12 !default;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         15px !default;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:     $screen-s-min !default;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+
+// sall screen / tablet
+$container-tablet:             (728px + $grid-gutter-width) !default;
+//** For `$screen-s-min` and up.
+$container-s:                 $container-tablet !default;
+
+// Medium screen / desktop
+$container-desktop:            (940px + $grid-gutter-width) !default;
+//** For `$screen-m-min` and up.
+$container-m:                 $container-desktop !default;
+
+// Large screen / wide desktop
+$container-large-desktop:      (1140px + $grid-gutter-width) !default;
+//** For `$screen-l-min` and up.
+$container-l:                 $container-large-desktop !default;
+
+// Large screen / wide desktop
+$container-medium-large-desktop:      (1300px + $grid-gutter-width) !default;
+//** For `$screen-l-min` and up.
+$container-ml:                 $container-medium-large-desktop !default;
+
+// Large screen / wide desktop
+$container-extra-large-desktop:      (1440px + $grid-gutter-width) !default;
+//** For `$screen-l-min` and up.
+$container-xl:                 $container-extra-large-desktop !default;
+
+
+
+//____________________________________________________________________
+
+//== Thumbnails
+//
+//##
+
+//** Padding around the thumbnail image
+$thumbnail-padding:           4px !default;
+//** Thumbnail background color
+$thumbnail-bg:                $body-background !default;
+//** Thumbnail border color
+$thumbnail-border:            #ddd !default;
+//** Thumbnail border radius
+$thumbnail-border-radius:     $border-radius-base !default;
+
+//** Custom text color for thumbnail captions
+$thumbnail-caption-color:     $body-text-color !default;
+//** Padding around the thumbnail caption
+$thumbnail-caption-padding:   9px !default;
+
+
+
+//_____________buttons_______________
+
+$button-pudding: 0.18571em 0.7em 0.18571em;
+$button-margin: 0.5em 0.1em 0.5em 0.1em;
+$button-border-radius: 0.1rem;
+$button-default-color: lighten(#555, 5%);
+$button-default-border: #e0e0e0;
+$button-default-bg: #f4f4f4;
+$button-link-color: $link-color;
+$link-hover-color: darken($button-link-color, 15%);
+
+
+$input-font: normal 18px/normal "PT Sans", Helvetica, sans-serif;
+$input-border: 2px solid $primary-color;
+$input-border-radius: 2px;

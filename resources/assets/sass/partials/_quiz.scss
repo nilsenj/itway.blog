@@ -1,0 +1,20 @@
+.quiz-form-block {
+
+  padding: 50px 10px;
+
+  .options-block {
+    width:100%;
+    display: block;
+    .icon-circle {
+      font-size: 14px;
+      color: $warning-color;
+    }
+    .input.input-line {
+      width:80%;
+    }
+    button{
+      float: right;
+      width: 10%;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="true">
+    <file url="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/database/seeds/AdminSeeder.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/database/seeds/PermissionsTableSeeder.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/database/seeds/RolesTableSeeder.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/plugins/bootstrap-slider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/plugins/fastclick" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/plugins/slimScroll" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/lang/ru/footer.php" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/resources/views/admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/app.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/home.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/includes/footer.blade.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/resources/views/includes/notifier-panel.blade.php" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/landing.blade.php" charset="windows-1252" />
+  </component>
+</project>

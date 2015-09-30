@@ -1,0 +1,150 @@
+
+/* Setup */
+
+html {
+    /* Change default typefaces here */
+    font-family: 'Source Sans Pro','icomoon',sans-serif;
+    font-size: $font-size-base;
+    // Make everything look a little nicer in webkit
+    -webkit-font-smoothing: antialiased;
+    // -webkit-text-size-adjust: auto
+    // -moz-text-size-adjust: auto
+    // -ms-text-size-adjust: auto
+    // -o-text-size-adjust: auto
+    // text-size-adjust: auto
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+
+}
+
+small {
+    font-size: .66666667em;
+}
+a {
+    text-decoration: none;
+  color: $primary-color;
+  font-family: 'Source Sans Pro',sans-serif;
+  i {
+    font-family: 'icomoon';
+  }
+}
+.line {
+  width: 100%;
+  margin-top: 5px;
+  border-bottom: 2px solid $grey-color;
+}
+/* Copy & Lists */
+
+p {
+    line-height: $leading;
+    margin-top: $leading/2;
+    margin-bottom: 0;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-family: 'Roboto Condensed', 'Source Sans Pro',sans-serif;
+  
+}
+ul,
+ol {
+    margin-top: $leading;
+    margin-bottom: $leading;
+    li {
+        line-height: $leading;
+    }
+    ul,
+    ol {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+blockquote {
+    line-height: $leading;
+    margin-top: $leading;
+    margin-bottom: $leading;
+    font-family: 'Source Sans Pro',sans-serif;
+
+}
+/* Headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    /* Change heading typefaces here */
+    font-family: 'Roboto Condensed', 'Source Sans Pro',sans-serif;
+    margin-top: $leading*0;
+    margin-bottom: $leading*0;
+    line-height: $leading;
+    font-weight: normal;
+}
+h1 {
+    font-size: 2.25 * $scale * 1rem;
+    line-height: 2.25 * $leading;
+    padding-top: $leading;
+    padding-bottom: $leading;
+}
+h2 {
+    font-size: 1.75 * $scale * 1rem;
+    line-height: 1.75 * $leading;
+    padding-top: $leading * 1.75/2.25;
+    padding-bottom: $leading * 1.75/2.25;
+
+}
+h3 {
+    font-size: 1.25 * $scale * 1rem;
+    line-height: 1.25 * $leading;
+    padding-top: $leading * 1.25/2.25;
+    padding-bottom: $leading * 1.25/2.25;
+}
+h4 {
+    font-size: $scale / 1 * 1rem;
+    line-height: 1 * $leading;
+    padding-top: $leading * 1/2.25;
+    padding-bottom: $leading * 1/2.25;
+}
+h5 {
+    font-size: $scale / 1.25 * 1rem;
+    line-height: 1 * $leading;
+    padding-top: $leading * 0.75/2.25;
+    padding-bottom: $leading * 0.75/2.25;
+}
+h6 {
+    font-size: $scale / 1.75 * 1rem;
+    line-height: 1 * $leading;
+    padding-top: $leading * 0.25/2.25;
+    padding-bottom: $leading * 0.25/2.25;
+}
+/* Tables */
+
+table {
+    margin-top: $leading;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+td,
+th {
+    padding: 0;
+    line-height: $baseLineHeight * $font-size-base - 0px;
+}
+/* Code blocks */
+
+code {
+    // Forces text to constrain to the line-height. Not ideal, but works.
+    vertical-align: bottom;
+}
+/* Leading paragraph text */
+
+.lead {
+    font-size: $scale * 1rem;
+}
+/* Hug a the block above you */
+
+.hug {
+    margin-top: 0;
+}

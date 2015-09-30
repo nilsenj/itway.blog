@@ -1,0 +1,58 @@
+footer {
+
+  background-color: $main-color;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 23.4px;
+  line-height: 1.46rem;
+  padding-top: 2.25em;
+  padding-bottom: 2.25em;
+  overflow: hidden;
+  color: #8a8a8a;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 207px;
+
+
+ a {
+    color: #27c0d8;
+    text-decoration: none;
+    //border-bottom: 1px dotted #27c0d8;
+  }
+  a:hover {
+    color: #23adc2;
+  }
+   p {
+    margin: 0;
+    display: inline-block;
+    text-align: center;
+  }
+}
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 30px;
+}
+body {
+  padding-bottom: 207px;
+}
+.icon-love-to-it {
+  position: relative;
+  font-size: 32px;
+}
+.love-to-it {
+  display: block;
+  width: auto;
+  height: auto;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: "Source Sans Pro";
+  color: $primary-color;
+}

@@ -1,0 +1,46 @@
+.bg-branding {
+  @import "color-schemas/_branding";
+  @include bg-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+
+.bg-default {
+  @include bg-variant($button-default-color, $button-default-bg, $button-default-border);
+}
+.bg-primary {
+  @import "color-schemas/_blue-grey";
+  @include bg-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+
+// Success appears as green
+.bg-success {
+  @import "color-schemas/_green";
+  @include bg-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+
+// Info appears as blue-green
+.bg-info {
+  @import "color-schemas/_light-blue";
+  @include bg-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+// Warning appears as orange
+.bg-warning {
+  @import "color-schemas/_orange";
+  @include bg-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+// Danger and error appear as red
+.bg-danger {
+  @import "color-schemas/_red";
+  @include bg-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+
+// grey
+.button-grey {
+  @import "color-schemas/_grey";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}
+
+// dark
+.button-dark {
+  @import "color-schemas/_dark";
+  @include button-variant($textPrimaryColor, lighten($primaryColor, 5%), $accentColor);
+}

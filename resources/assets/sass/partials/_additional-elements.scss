@@ -1,0 +1,14 @@
+.filelabel {
+  width: 250px;
+  height: 250px;
+  -webkit-appearance: none !important;
+  padding: 50px 8px!important;
+  margin: 0 !important;
+  text-align: center;
+  border-radius: 50%;
+  .icon-file {
+    font-size: 128px;
+    color: white;
+    padding-left: 10px;
+  }
+}
