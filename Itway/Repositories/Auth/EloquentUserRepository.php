@@ -38,7 +38,7 @@ class EloquentUserRepository implements UserContract {
         $user = User::where('provider_id', '=', $data->id )->orWhere('email', '=', $data->email )->first();
 
         if (!$user) {
-            $this->dispatchUser($data, $provider, $data['photo'], $data['id']);
+            $this->dispatchUser($data, $provider, $data['photo'], $data['id'], $data['password']);
         }
 
             $this->checkIfUserNeedsUpdating($data, $user, $provider);
@@ -47,12 +47,13 @@ class EloquentUserRepository implements UserContract {
     }
 
     /**
-     *  dispatch command and binded event to create a new user
+     * dispatch command and binded event to create a new user
      *
      * @param $data
      * @param null $provider
      * @param null $photo
      * @param null $id
+     * @param $password
      * @return mixed
      */
     protected function dispatchUser($data, $provider = null, $photo = null, $id = null){
@@ -62,9 +63,12 @@ class EloquentUserRepository implements UserContract {
                 $data['email'],
                 $photo,
                 $provider,
-                $id
-
+                $id,
+                $data['password']
             ));
+
+        $user->attachRole(3);
+
         return $user;
     }
 
@@ -98,7 +102,7 @@ class EloquentUserRepository implements UserContract {
             $user->photo = $data->avatar;
             $user->email = $data->email;
             $user->name = $data->name;
-//            $user->password = $user->password;
+            $user->password = $user->password;
             $user->provider = $provider;
             $user->provider_id = $data->id;
             $user->update();

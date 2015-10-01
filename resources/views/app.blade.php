@@ -1,13 +1,19 @@
 @include('includes.head')
+
 <body class="layout-boxed sidebar-mini skin-black">
+
+@if(\Illuminate\Support\Facades\Auth::guest() || (\Illuminate\Support\Facades\Auth::user() && (\Illuminate\Support\Facades\Auth::user()->banned !== 1)))
+
 @include('includes.navigation')
 
 @if(URL::current() === 'http://'.$_SERVER['SERVER_NAME'].'/'.Lang::getLocale())
 @include('pages.landing')
-    @else
+@endif
+
 
 <div class="container wrapper">
     <div class="content-wrapper">
+
     @include('includes.notifier-panel')
     {{--<div class="container-fluid">--}}
         {{--@include('includes.subnavigation')--}}
@@ -16,8 +22,8 @@
 <div>
     {{--@include('includes.site-location')--}}
 </div>
-@endif
-<div class="clearfix"></div>
+
+        <div class="clearfix"></div>
 
     <div class="container site-buttons">
 
@@ -53,7 +59,10 @@
 </div>
 
 @include('includes.footer')
-@include('includes.bottom-navigation')
 
+@include('includes.bottom-navigation')
+@else
+    <h1 class="text-danger text-center">You are banned</h1>
+@endif
 </body>
 </html>

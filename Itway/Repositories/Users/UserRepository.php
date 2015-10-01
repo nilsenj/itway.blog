@@ -14,5 +14,5 @@ use Itway\Repositories\Repository;
 interface UserRepository extends Repository
 {
     public function getRole($user);
-    
+    public function banORunBan($id);
 }

@@ -117,12 +117,73 @@ Route::group([ 'prefix' => $locale, 'middleware' => 'locale'], function() {
     Route::group(array('prefix' => 'admin', 'middleware' => ['admin', 'auth'], 'as' => 'admin::'), function () {
 
 
-        Route::get('/', ['uses' => 'AdminController@index', 'as' => 'dash']);
+        Route::get('/', ['uses' => 'AdminController@index', 'as' => 'dashboard']);
 
         Route::get('/posts', ['uses' => 'AdminPostsController@index', 'as' => 'post']);
 
         Route::get('posts/create', function () {
             return view('admin.posts-create');
+        });
+
+        Route::group(['prefix' => 'users', 'as' => 'users::'], function() {
+
+            Route::get('/', [
+                'uses' => 'AdminUsersController@index',
+                'as' => 'index'
+
+            ]);
+            Route::get('create', [
+                'uses' => 'AdminUsersController@create',
+                'as' => 'create'
+
+            ]);
+            Route::get('edit/{slug}', [
+                'uses' => 'AdminUsersController@edit',
+                'as' => 'edit'
+            ]);
+            Route::patch('update/{id}', [
+                'uses' => 'AdminUsersController@update',
+                'as' => 'update'
+            ]);
+            Route::delete('delete/{id}', [
+                'uses' => 'AdminUsersController@destroy',
+                'as' => 'delete'
+            ]);
+            Route::post('store', [
+                'uses' => 'AdminUsersController@store',
+                'as' => 'store'
+            ]);
+            Route::get('banORunBan/{id}', [
+                'uses' => 'AdminUsersController@banORunBan',
+                'as' => 'ban'
+            ]);
+
+        });
+        Route::group(['prefix' => 'posts', 'as' => 'posts::'], function(){
+
+            Route::get('/', [
+                'uses' => 'AdminPostsController@index',
+                'as' => 'index'
+
+            ]);
+
+            Route::get('edit/{id}', [
+                'uses' => 'AdminPostsController@edit',
+                'as' => 'edit'
+            ]);
+            Route::patch('update/{id}', [
+                'uses' => 'AdminPostsController@update',
+                'as' => 'update'
+            ]);
+            Route::delete('delete/{id}', [
+                'uses' => 'AdminPostsController@destroy',
+                'as' => 'delete'
+            ]);
+            Route::post('store', [
+                'uses' => 'AdminPostsController@store',
+                'as' => 'store'
+            ]);
+
         });
 
 

@@ -1,28 +1,14 @@
 @extends('admin/app')
-<h1>
-    @section('breadcrumb')
-        {{--{!! Breadcrumbs::render('admin') !!}--}}
 
-        {!! Breadcrumbs::render('users', 'Пользователи') !!}
-    @endsection
-    @section('contentheader_title')
 
-        Изменить пользователя
-    @endsection
-    @section('contentheader_description')
-
+@section('content')
+    <span class="admin-head-title">
+        Change user settings
         &middot;
         <b>{!! link_to_route('admin::users::index', 'Back') !!}</b>
-
-    @endsection
-</h1>
-
-@section('main-content')
-
-    <div>
+    </span>
+    <div class="admin-block">
         @include('admin.users.form', array('model' => $user) + compact('role'))
-
-        {{--@include('admin.users.form')--}}
     </div>
 
 @endsection

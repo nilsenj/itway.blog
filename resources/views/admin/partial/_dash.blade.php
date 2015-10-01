@@ -4,7 +4,7 @@
 
         <!-- Small boxes (Stat box) -->
         <div class="row">
-            <div class="col-lg-3 col-xs-6">
+            <div class="l-3 xs-6">
                 <!-- small box -->
                 <div class="small-box bg-aqua">
                     <div class="inner">
@@ -23,7 +23,7 @@
                     </a>
                 </div>
             </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
+            <div class="l-3 xs-6">
                 <!-- small box -->
                 <div class="small-box bg-green">
                     <div class="inner">
@@ -42,7 +42,7 @@
                     </a>
                 </div>
             </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
+            <div class="l-3 xs-6">
                 <!-- small box -->
                 <div class="small-box bg-yellow">
                     <div class="inner">
@@ -61,7 +61,7 @@
                     </a>
                 </div>
             </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
+            <div class="l-3 xs-6">
                 <!-- small box -->
                 <div class="small-box bg-red">
                     <div class="inner">
@@ -84,7 +84,7 @@
 
         <!-- top row -->
         <div class="row">
-            <div class="col-xs-12 connectedSortable">
+            <div class="xs-12 connectedSortable">
 
             </div><!-- /.col -->
         </div>
@@ -93,15 +93,15 @@
         <!-- Main row -->
         <div class="row">
             <!-- Left col -->
-            <section class="col-lg-6 connectedSortable">
+            <section class="l-6 connectedSortable">
                 <!-- Box (with bar chart) -->
                 <div class="box box-danger" id="loading-example">
                     <div class="box-header">
                         <!-- tools box -->
                         <div class="pull-right box-tools">
-                            <button class="btn btn-danger btn-sm refresh-btn" data-toggle="tooltip" title="Reload"><i class="fa fa-refresh"></i></button>
-                            <button class="btn btn-danger btn-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
-                            <button class="btn btn-danger btn-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+                            <button class="button button-danger button-sm refresh-button" data-toggle="tooltip" title="Reload"><i class="fa fa-refresh"></i></button>
+                            <button class="button button-danger button-sm" data-widget='collapse' data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+                            <button class="button button-danger button-sm" data-widget='remove' data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
                         </div><!-- /. tools -->
                         <i class="fa fa-cloud"></i>
 
@@ -149,7 +149,7 @@
                                     </div>
                                     <!-- Buttons -->
                                     <p>
-                                        <button class="btn btn-default btn-sm"><i class="fa fa-cloud-download"></i> Generate PDF</button>
+                                        <button class="button button-default button-sm"><i class="fa fa-cloud-download"></i> Generate PDF</button>
                                     </p>
                                 </div><!-- /.pad -->
                             </div><!-- /.col -->
@@ -157,15 +157,15 @@
                     </div><!-- /.box-body -->
                     <div class="box-footer">
                         <div class="row">
-                            <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                            <div class="xs-4 text-center" style="border-right: 1px solid #f4f4f4">
                                 <input type="text" class="knob" data-readonly="true" value="80" data-width="60" data-height="60" data-fgColor="#f56954"/>
                                 <div class="knob-label">CPU</div>
                             </div><!-- ./col -->
-                            <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                            <div class="xs-4 text-center" style="border-right: 1px solid #f4f4f4">
                                 <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60" data-fgColor="#00a65a"/>
                                 <div class="knob-label">Disk</div>
                             </div><!-- ./col -->
-                            <div class="col-xs-4 text-center">
+                            <div class="xs-4 text-center">
                                 <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60" data-fgColor="#3c8dbc"/>
                                 <div class="knob-label">RAM</div>
                             </div><!-- ./col -->
@@ -197,8 +197,8 @@
                         <!-- tools box -->
                         <div class="pull-right box-tools">
                             <!-- button with a dropdown -->
-                            <div class="btn-group">
-                                <button class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></button>
+                            <div class="button-group">
+                                <button class="button button-warning button-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></button>
                                 <ul class="dropdown-menu pull-right" role="menu">
                                     <li><a href="#">Add new event</a></li>
                                     <li><a href="#">Clear events</a></li>
@@ -221,7 +221,7 @@
                         <h3 class="box-title">Quick Email</h3>
                         <!-- tools box -->
                         <div class="pull-right box-tools">
-                            <button class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+                            <button class="button button-info button-sm" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
                         </div><!-- /. tools -->
                     </div>
                     <div class="box-body">
@@ -238,20 +238,20 @@
                         </form>
                     </div>
                     <div class="box-footer clearfix">
-                        <button class="pull-right btn btn-default" id="sendEmail">Send <i class="fa fa-arrow-circle-right"></i></button>
+                        <button class="pull-right button button-default" id="sendEmail">Send <i class="fa fa-arrow-circle-right"></i></button>
                     </div>
                 </div>
 
             </section><!-- /.Left col -->
             <!-- right col (We are only adding the ID to make the widgets sortable)-->
-            <section class="col-lg-6 connectedSortable">
+            <section class="l-6 connectedSortable">
                 <!-- Map box -->
                 <div class="box box-primary">
                     <div class="box-header">
                         <!-- tools box -->
                         <div class="pull-right box-tools">
-                            <button class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range"><i class="fa fa-calendar"></i></button>
-                            <button class="btn btn-primary btn-sm pull-right" data-widget='collapse' data-toggle="tooltip" title="Collapse" style="margin-right: 5px;"><i class="fa fa-minus"></i></button>
+                            <button class="button button-primary button-sm daterange pull-right" data-toggle="tooltip" title="Date range"><i class="fa fa-calendar"></i></button>
+                            <button class="button button-primary button-sm pull-right" data-widget='collapse' data-toggle="tooltip" title="Collapse" style="margin-right: 5px;"><i class="fa fa-minus"></i></button>
                         </div><!-- /. tools -->
 
                         <i class="fa fa-map-marker"></i>
@@ -310,8 +310,8 @@
                         </div>
                     </div><!-- /.box-body-->
                     <div class="box-footer">
-                        <button class="btn btn-info"><i class="fa fa-download"></i> Generate PDF</button>
-                        <button class="btn btn-warning"><i class="fa fa-bug"></i> Report Bug</button>
+                        <button class="button button-info"><i class="fa fa-download"></i> Generate PDF</button>
+                        <button class="button button-warning"><i class="fa fa-bug"></i> Report Bug</button>
                     </div>
                 </div>
                 <!-- /.box -->
@@ -321,9 +321,9 @@
                     <div class="box-header">
                         <h3 class="box-title"><i class="fa fa-comments-o"></i> Chat</h3>
                         <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
-                            <div class="btn-group" data-toggle="btn-toggle" >
-                                <button type="button" class="btn btn-default btn-sm active"><i class="fa fa-square text-green"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-square text-red"></i></button>
+                            <div class="button-group" data-toggle="button-toggle" >
+                                <button type="button" class="button button-default button-sm active"><i class="fa fa-square text-green"></i></button>
+                                <button type="button" class="button button-default button-sm"><i class="fa fa-square text-red"></i></button>
                             </div>
                         </div>
                     </div>
@@ -346,7 +346,7 @@
                                     Theme-thumbnail-image.jpg
                                 </p>
                                 <div class="pull-right">
-                                    <button class="btn btn-primary btn-sm btn-flat">Open</button>
+                                    <button class="button button-primary button-sm button-flat">Open</button>
                                 </div>
                             </div><!-- /.attachment -->
                         </div><!-- /.item -->
@@ -380,8 +380,8 @@
                     <div class="box-footer">
                         <div class="input-group">
                             <input class="form-control" placeholder="Type message..."/>
-                            <div class="input-group-btn">
-                                <button class="btn btn-success"><i class="fa fa-plus"></i></button>
+                            <div class="input-group-button">
+                                <button class="button button-success"><i class="fa fa-plus"></i></button>
                             </div>
                         </div>
                     </div>
@@ -490,7 +490,7 @@
                         </ul>
                     </div><!-- /.box-body -->
                     <div class="box-footer clearfix no-border">
-                        <button class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
+                        <button class="button button-default pull-right"><i class="fa fa-plus"></i> Add item</button>
                     </div>
                 </div><!-- /.box -->
 

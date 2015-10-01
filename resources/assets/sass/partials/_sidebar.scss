@@ -407,3 +407,35 @@
 .control-sidebar-light .control-sidebar-menu > li > a .menu-info > p {
   color: #5e5e5e;
 }
+.sidebar-admin {
+  background: #f8f8f8;
+  padding: 0 0 5px 0;
+  font-size: 20px;
+  margin-left: 0;
+}
+.sidebar-menu {
+  background: #f8f8f8;
+  display: block;
+  position: relative;
+  height: auto;
+}
+.sidebar .user-title{
+  display: block;
+  width: 100%!important;
+  text-align: center;
+  p {
+    padding-right: 10px;
+    display: inline;
+    font-size: medium;
+    position: absolute;
+    right: 2px;
+    top: 5px;
+  }
+  h4 {
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    background-color: #455A64;
+    color: #FFFFFF;
+  }
+}

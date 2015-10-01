@@ -30,7 +30,7 @@ class AdminUsersController extends Controller {
      */
     protected function redirectNotFound()
     {
-        return redirect('admin.users.index');
+        return redirect()->to(\App::getLocale().'/admin/users');
     }
     /**
      * Display a listing of users
@@ -53,7 +53,7 @@ class AdminUsersController extends Controller {
      */
     public function create()
     {
-        $roles = Role::all()->lists('slug', 'id');
+        $roles = Role::all()->lists('name', 'id');
 
         return view('admin.users.create', compact('roles'));
     }
@@ -70,9 +70,9 @@ class AdminUsersController extends Controller {
 
         $user = $this->userRepository->create($data);
 
-        $user->addRole($request->get('role'));
+        $user->attachRole($request->get('role'));
 
-        return redirect('admin/users');
+        return redirect()->to(\App::getLocale().'/admin/users');
     }
 
     /**
@@ -99,15 +99,16 @@ class AdminUsersController extends Controller {
 
     /**
      * edit page for users
+     *
      * @param $slug
      * @return \Illuminate\View\View|Response
      */
-    public function edit($slug)
+    public function edit($id)
     {
         try {
-            $user = User::findBySlug($slug);
+            $user = User::find($id);
 
-            $roles = Role::all()->lists('slug', 'id');
+            $roles = Role::all()->lists('name', 'id');
 
             $role = $this->userRepository->getRole($user);
 
@@ -124,21 +125,21 @@ class AdminUsersController extends Controller {
      * update users data
      *
      * @param UsersUpdateFormRequest $request
-     * @param $slug
+     * @param $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|Response
      */
-    public function update(UsersUpdateFormRequest $request, $slug)
+    public function update(UsersUpdateFormRequest $request, $id)
     {
         try {
             $data = ! $request->has('password') ? $request->except('password') : $request->all();
 
-            $user = User::findBySlug($slug);
+            $user = User::find($id);
 
             $user->update($data);
 
             $user->roles()->sync((array) \Input::get('role'));
 
-            return redirect('admin/users');
+            return redirect()->back();
 
         } catch (ModelNotFoundException $e) {
 
@@ -148,18 +149,50 @@ class AdminUsersController extends Controller {
     }
 
     /**
+     *  delete user
      *
-     * delete user
-     *
-     * @param $slug
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|Response
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|Response
      */
-    public function destroy($slug)
+    public function destroy($id)
     {
         try {
-            $this->userRepository->delete($slug);
+            $username = User::find($id)->name;
 
-            return redirect('admin/users');
+            if(''.\Auth::user()->id === $id) {
+
+                \Toastr::error('Can\'t be deleted!', $title = $username, $options = []);
+
+                return redirect()->back();
+            }
+            else {
+                \Toastr::success('User deleted!', $title = $username, $options = []);
+
+                $this->userRepository->delete($id);
+            }
+            return redirect()->back();
+
+        } catch (ModelNotFoundException $e) {
+
+            return $this->redirectNotFound();
+        }
+    }
+
+    public function banORunBan($id) {
+        try {
+            $username = User::find($id)->name;
+
+            if(''.\Auth::user()->id === $id) {
+
+                \Toastr::error('Can\'t be banned!', $title = $username, $options = []);
+
+                return redirect()->back();
+            }
+            else {
+
+                $this->userRepository->banORunBan($id);
+            }
+            return redirect()->back();
 
         } catch (ModelNotFoundException $e) {
 

@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('Facebook')->unique()->nullable();
             $table->string('Github')->unique()->nullable();
             $table->string('Twitter')->unique()->nullable();
+            $table->boolean('banned')->default(false);
             $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();

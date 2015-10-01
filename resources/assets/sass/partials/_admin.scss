@@ -1,0 +1,35 @@
+.admin-block {
+
+  padding-left: 0!important;
+  background-color: #FAFAFA;
+  color: #212121;
+  .xs-12 {padding-left: 0!important;}
+  a.text-warning {
+    color: $warning-color!important;
+  }
+
+  a.text-danger {
+    color: $danger-color!important;
+  }
+
+}
+.admin-head-title {
+  position: absolute;
+  top: -25px;
+  left: 10px;
+  font-size: 14px!important;
+  padding: 3px 0!important;
+  color: #FAFAFA!important;
+  width: 97%;
+  b {
+    float: right;
+    font-size: 18px;
+    background-color: white;
+    padding: 0px 10px;
+    border: 1px solid black;
+    &:hover, &:active {
+      color: $info-color!important;
+      border: 1px solid $info-color;
+    }
+  }
+}

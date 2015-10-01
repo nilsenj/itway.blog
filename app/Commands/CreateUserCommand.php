@@ -20,7 +20,8 @@ class CreateUserCommand  extends Command implements SelfHandling
         $email,
         $photo,
         $provider,
-        $provider_id;
+        $provider_id,
+        $password;
 
 
     /**
@@ -29,19 +30,22 @@ class CreateUserCommand  extends Command implements SelfHandling
      * @param $photo
      * @param $provider
      * @param $provider_id
+     * @param $password
      */
     public function __construct(
         $name,
         $email,
         $photo,
         $provider,
-        $provider_id)
+        $provider_id,
+        $password)
     {
         $this->name = $name;
         $this->email = $email;
         $this->photo = $photo;
         $this->provider = $provider;
         $this->provider_id = $provider_id;
+        $this->password = $password;
     }
 
 
@@ -53,7 +57,8 @@ class CreateUserCommand  extends Command implements SelfHandling
             'email' => $this->email,
             'photo' => $this->photo,
             'provider' => $this->provider,
-            'provider_id' => $this->provider_id
+            'provider_id' => $this->provider_id,
+            'password' => $this->password
 
         ]);
 

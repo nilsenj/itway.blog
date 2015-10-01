@@ -24,12 +24,9 @@ class UsersUpdateFormRequest extends Request
      */
     public function rules()
     {
-        $slug = $this->slug;
-        $id = User::findBySlug($slug)->id;
-
         $rules = [
             'name' => 'required',
-            'email' => 'required|unique:users,id,' . $id
+            'email' => 'required|unique:users,id,' . $this->id
         ];
         if ($this->has('password')) {
             $rules['password'] = 'required|min:6|max:20';

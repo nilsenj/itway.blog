@@ -1,64 +1,46 @@
-<!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html>
+@include('admin.partials.head')
 
-@include('partials.htmlheader')
+<body class="layout-boxed sidebar-mini skin-black">
+@include('admin.partials.navigation')
 
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
-<body class=" layout-boxed sidebar-mini skin-black">
-<div class="wrapper">
 
-    @include('partials.mainheader')
+    <div class="container wrapper">
+        <div class="content-wrapper">
+            @include('includes.notifier-panel')
+            {{--<div class="container-fluid">--}}
+            {{--@include('includes.subnavigation')--}}
+            {{--</div>--}}
 
-    @include('partials.sidebar')
+            <div>
+                {{--@include('includes.site-location')--}}
+            </div>
+            <div class="clearfix"></div>
+            @include('includes.search')
+            <div  id="container" style="overflow: visible;" class="container" >
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        @include('partials.contentheader')
+                <div class="l-3 m-4 hidden-s hidden-xs">
+                    <div class="row">
+                        <div class="sidebar">
 
-        <!-- Main content -->
-        <section class="content">
-            @if (Session::has('flash_notification.message'))
-                <div class="alert alert-{{ Session::get('flash_notification.level') }}">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            @include('admin.partials.sidebar')
 
-                    {{ Session::get('flash_notification.message') }}
+                        </div>
+                    </div>
                 </div>
-                @endif
-            <!-- Your Page Content Here -->
-            @include("admin.partial.sizes")
-            @yield('main-content')
+                <div class="l-9 m-8 s-12 xs-12" style="padding-right: 0;">
 
-        </section><!-- /.content -->
-    </div><!-- /.content-wrapper -->
+                    @include('flash::message')
+                    @include('includes.errors')
+                    @yield('content')
+                </div>
 
-    @include('partials.controlsidebar')
+            </div>
 
-</div><!-- ./wrapper -->
+        </div>
+    </div>
 
-@include('partials.scripts')
-@yield("scripts-add")
+    @include('includes.footer')
+    @include('includes.bottom-navigation')
+
 </body>
 </html>

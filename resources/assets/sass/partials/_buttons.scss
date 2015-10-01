@@ -45,6 +45,9 @@
     color: darken($button-default-color,10%);
     background-color: darken($button-default-bg, 10%);
   }
+  &.centered {
+    margin: 5px auto!important;
+  }
   &.button-raised {
     transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     &:hover:not(.button-link) {
@@ -303,5 +306,16 @@ input[type="button"] {
 
     }
 
+  }
+}
+input[type="submit"].href, button.href{
+  border: none;
+  text-align: center;
+  padding: 0;
+  margin: 0 auto;
+  background: none;
+  outline: none;
+  &:hover {
+    text-decoration: underline;
   }
 }

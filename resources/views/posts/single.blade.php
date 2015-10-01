@@ -6,73 +6,6 @@
 
 @endsection
 @section('styles-add')
-    <style>
-        .small-slider {
-            max-width: 320px;
-            display: inline-block;
-            vertical-align: top;
-            margin: 10px;
-        }
-
-        .btn {
-            font-family: 'Voltaire', Arial;
-            background: #ffffff;
-            color: #2B2A30;
-            border: 2px solid #2B2A30;
-            -webkit-appearance: none;
-            font-size: 14px;
-            text-transform: uppercase;
-            padding: 10px 10px;
-            line-height: 10px;
-            margin-top: 20px;
-        }
-        @media only screen and (min-width: 480px) {
-            .btn {
-                margin-top: -10px;
-                position: absolute;
-                z-index: 3;
-                top: 50%;
-                opacity: 0;
-                -webkit-transition: opacity 200ms ease;
-                -moz-transition: opacity 200ms ease;
-                -ms-transition: opacity 200ms ease;
-                transition: opacity 200ms ease;
-            }
-            .wallop-slider:hover .btn {
-                opacity: .75;
-            }
-            .wallop-slider:hover .btn:hover {
-                opacity: 1;
-            }
-        }
-        .btn:hover {
-            cursor: pointer;
-        }
-        .btn[disabled] {
-            opacity: .4;
-        }
-        .btn[disabled], .btn[disabled]:hover {
-            cursor: default;
-        }
-        @media only screen and (min-width: 480px) {
-            .btn[disabled] {
-                visibility: hidden;
-            }
-        }
-
-        @media only screen and (min-width: 480px) {
-            .btn--previous {
-                left: 10px;
-            }
-        }
-
-        @media only screen and (min-width: 480px) {
-            .btn--next {
-                right: 10px;
-            }
-        }
-
-    </style>
 @endsection
 @section('sidebar.buttons')
     @include('posts.site-btns')
@@ -101,9 +34,7 @@
                 </div>
                 <div class="l-4 m-4 s-4 xs-4" style=" ">
 
-                    <?php
-                        $url = 'likeORdis'
-                   ?>
+                    <?php $url = 'likeORdis' ?>
                     {!!Form::open(["id" => "like", "method" => "GET","url" => route($url, array('class_name' => 'post', 'object_id' => $post->id))])!!}
                     <button style="line-height: 40px;" class=" button button-rounded pull-right  tooltip tooltipstered"  @if($post->getLikeCount() !== 0) title="{{$post->getLikeCount()}}"@endif>@if($post->liked(Auth::user()))<i class="icon-heart  text-danger "></i>@else <i class="icon-heart"></i> @endif</button>
                     {!!Form::close()!!}
