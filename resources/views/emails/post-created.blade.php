@@ -7,7 +7,7 @@
         <b>we wish you all the best and be a happy programmer</b>
     </p>
     <br><br>
-    <a style="display: block;width: 60%; margin: 0 auto; background: #404b58;color: white; padding: 10px; text-align: center;" href="{{$link}}">your post</a>
+    <a style="display: block;width: 60%; margin: 0 auto; background: #404b58;color: white; padding: 10px; text-align: center;" href="http://www.itway.io/.{{$link}}">your post</a>
 
     <p style="text-align: center; color: grey">
         <strong>{{ $title }}</strong>

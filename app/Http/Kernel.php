@@ -32,6 +32,7 @@ class Kernel extends HttpKernel
         'Csrf' => \itway\Http\Middleware\VerifyCsrfToken::class,
         'locale' => \itway\Http\Middleware\LocalUser::class,
         'admin' => \itway\Http\Middleware\RedirectIfNotAdmin::class,
-        'IsUsersOrAdmin' => \itway\Http\Middleware\IsUsersOrAdmin::class,
+        'IsUsersOrAdminPost' => \itway\Http\Middleware\IsUsersOrAdminPost::class,
+        'IsUsers' => \itway\Http\Middleware\IsUsers::class,
     ];
 }

@@ -5,7 +5,8 @@ namespace itway\Http\Middleware;
 use Closure;
 use Auth;
 use itway\Post;
-class IsUsersOrAdmin
+
+class IsUsersOrAdminPost
 {
     /**
      * Handle an incoming request.

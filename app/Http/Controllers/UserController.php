@@ -141,7 +141,7 @@ class UserController extends Controller {
 	{
 		//
 	}
-    public function userPhoto( UserPhotoRequest $request) {
+    public function userPhoto(UserPhotoRequest $request) {
 
         $user = User::find($request->user()->id);
 

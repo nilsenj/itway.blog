@@ -61,12 +61,12 @@ Route::group([ 'prefix' => $locale, 'middleware' => 'locale'], function() {
             Route::patch('update/{id}', [
                 'uses' => 'PostsController@update',
                 'as' => 'update',
-                'middleware' => 'IsUsersOrAdmin'
+                'middleware' => 'IsUsersOrAdminPost'
             ]);
             Route::delete('delete/{id}', [
                 'uses' => 'PostsController@destroy',
                 'as' => 'delete',
-                'middleware' => 'IsUsersOrAdmin'
+                'middleware' => 'IsUsersOrAdminPost'
             ]);
             Route::post('store', [
                 'uses' => 'PostsController@store',
@@ -85,7 +85,7 @@ Route::group([ 'prefix' => $locale, 'middleware' => 'locale'], function() {
 
             ]);
             Route::get('/{id}', [ 'as' => 'show', 'uses' => 'UserController@show',]);
-            Route::get('/settings/{id}', [ 'as' => 'settings', 'uses'=>'UserController@settings', 'middleware' => 'IsUsersOrAdmin']);
+            Route::get('/settings/{id}', [ 'as' => 'settings', 'uses'=>'UserController@settings', 'middleware' => 'IsUsers']);
 
             Route::get('create', [
                 'uses' => 'UserController@create',
@@ -94,22 +94,22 @@ Route::group([ 'prefix' => $locale, 'middleware' => 'locale'], function() {
             ]);
             Route::get('edit/{id}', [
                 'uses' => 'UserController@edit',
-                'as' => 'edit', 'middleware' => 'IsUsersOrAdmin'
+                'as' => 'edit', 'middleware' => 'IsUsers'
             ]);
             Route::patch('update/{id}', [
                 'uses' => 'UserController@update',
 //                'middleware' => 'shouldBeUnique',
-                'as' => 'update', 'middleware' => 'IsUsersOrAdmin'
+                'as' => 'update', 'middleware' => 'IsUsers'
             ]);
             Route::delete('{id}', [
                 'uses' => 'UserController@destroy',
-                'as' => 'delete', 'middleware' => 'IsUsersOrAdmin'
+                'as' => 'delete', 'middleware' => 'IsUsers'
             ]);
             Route::post('store', [
                 'uses' => 'UserController@store',
-                'as' => 'store', 'middleware' => 'IsUsersOrAdmin'
+                'as' => 'store', 'middleware' => 'IsUsers'
             ]);
-            Route::post('photo', ['uses' => 'UserController@userPhoto','middleware' => 'IsUsersOrAdmin', 'as' => 'photo']);
+            Route::post('photo', ['uses' => 'UserController@userPhoto','middleware' => 'IsUsers', 'as' => 'photo']);
 
         });
 
