@@ -1,4 +1,4 @@
-## Laravel sample blog with interesting functionality
+## Laravel sample blog with basic functionality
 
 1. install python --- don't ask why)|
 2. install ruby  --- for scss working correctly)|
