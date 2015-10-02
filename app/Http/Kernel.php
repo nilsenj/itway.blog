@@ -18,8 +18,8 @@ class Kernel extends HttpKernel
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
         \itway\Http\Middleware\VerifyCsrfToken::class,
-        \itway\Http\Middleware\VisitorLogger::class
-    ];
+        \itway\Http\Middleware\VisitorLogger::class,
+        \Nilsenj\Profiler\ProfilerLogger::class,];
 
     /**
      * The application's route middleware.

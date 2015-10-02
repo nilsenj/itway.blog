@@ -151,6 +151,7 @@ return [
         'nilsenj\Toastr\ToastrServiceProvider',
         Mpociot\Teamwork\TeamworkServiceProvider::class,
         'Weboap\Visitor\VisitorServiceProvider',
+        Nilsenj\Profiler\ProfilerServiceProvider::class,
 
 
         /*
@@ -221,6 +222,7 @@ return [
         'Toastr' => 'nilsenj\Toastr\Facades\Toastr',
         'Youtube' => 'Itway\Services\Youtube\Facades\Youtube',
         'LaravelAnalytics' => 'Spatie\LaravelAnalytics\LaravelAnalyticsFacade',
+        'Profiler' => Nilsenj\Profiler\Facades\Profiler::class,
 
     ],
 

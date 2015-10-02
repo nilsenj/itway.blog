@@ -64,7 +64,7 @@
                                 <div class="clearfix"></div>
                                 <p style="padding-top: 10px;" class="post-info">{{str_limit($post->preamble, 200)}}</p>
 
-                                <a class="read-post button button-dark" href="{{url(App::getLocale().'/blog/post/'.$post->id)}}">read-more</a>
+                                <a class="read-post button button-dark" href="{{route('itway::posts::show',$post->id)}}">read-more</a>
                                 <span class="post-time pull-left"><i class="icon-clock-o text-warning"></i>{{$post->published_at->diffForHumans()}}</span>
                             </div>
 

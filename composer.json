@@ -43,7 +43,8 @@
         "psr-4": {
             "itway\\": "app/",
             "Itway\\": "Itway/",
-            "Itway\\Components\\Sidebar\\": "Itway/Components/Sidebar/"
+            "Itway\\Components\\Sidebar\\": "Itway/Components/Sidebar/",
+            "Nilsenj\\Profiler\\": "Itway/Components/LaravelProfiler/src/Nilsenj/Profiler/"
         }
     },
     "autoload-dev": {

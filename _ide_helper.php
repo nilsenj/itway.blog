@@ -13350,6 +13350,47 @@ namespace {
     }
 
 
+    class Profiler extends \Nilsenj\Profiler\Facades\Profiler{
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function start(){
+            return \Nilsenj\Profiler\Profiler::start();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function handle($data){
+            return \Nilsenj\Profiler\Profiler::handle($data);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function stop(){
+            return \Nilsenj\Profiler\Profiler::stop();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function readableSizeFormat($size){
+            return \Nilsenj\Profiler\Profiler::readableSizeFormat($size);
+        }
+        
+    }
+
+
     class Teamwork extends \Mpociot\Teamwork\Facades\Teamwork{
         
         /**

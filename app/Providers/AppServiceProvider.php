@@ -6,6 +6,8 @@ use itway\Post;
 use View;
 use itway\SidebarCreator;
 use Auth;
+use App;
+use Event;
 
 class AppServiceProvider extends ServiceProvider {
 
@@ -22,6 +24,8 @@ class AppServiceProvider extends ServiceProvider {
 			'sidebar.sidebar',
 			SidebarCreator::class
 		);
+
+		Event::listen('nilsenj.profiler', 'Nilsenj\Profiler\Profiler@handle');
 
 	}
 

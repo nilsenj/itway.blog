@@ -22,7 +22,6 @@ $locale = Request::segment(1);
 
 Route::group([ 'prefix' => $locale, 'middleware' => 'locale'], function() {
 
-
     Route::post('/language', array(
         'as' => 'language-chooser',
         'uses' => 'LanguageController@chooser'));
@@ -30,6 +29,7 @@ Route::group([ 'prefix' => $locale, 'middleware' => 'locale'], function() {
     Route::get('/',  [ 'uses' => 'HomeController@index']);
 
     Route::group(['prefix' => '/', 'as' => 'itway::'], function(){
+
         Route::group(['prefix' => 'blog', 'as' => 'posts::'], function(){
 
             Route::get('/', [
@@ -56,7 +56,7 @@ Route::group([ 'prefix' => $locale, 'middleware' => 'locale'], function() {
             Route::get('edit/{id}', [
                 'uses' => 'PostsController@edit',
                 'as' => 'edit',
-                'middleware' => 'IsUsersOrAdmin'
+                'middleware' => 'IsUsersOrAdminPost'
             ]);
             Route::patch('update/{id}', [
                 'uses' => 'PostsController@update',

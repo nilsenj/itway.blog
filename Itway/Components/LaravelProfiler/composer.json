@@ -1,0 +1,26 @@
+{
+    "name": "nilsenj/profiler",
+    "description": "URL profiler package for Laravel 5.*",
+    "keywords": ["laravel", "url", "profiler", "query analyzer", "analyzer", "url log", "requests", "request log"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nikolenko Ivan",
+            "email": "nikoleivan@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": ">=5.0.0"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations",
+            "src/controllers"
+        ],
+        "psr-0": {
+            "Nilsenj\\Profiler": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
