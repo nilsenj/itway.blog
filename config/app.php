@@ -150,6 +150,7 @@ return [
         'Cviebrock\ImageValidator\ImageValidatorServiceProvider',
         'nilsenj\Toastr\ToastrServiceProvider',
         Mpociot\Teamwork\TeamworkServiceProvider::class,
+        'Weboap\Visitor\VisitorServiceProvider',
 
 
         /*

@@ -4,79 +4,62 @@
 
         <!-- Small boxes (Stat box) -->
         <div class="row">
-            <div class="l-3 xs-6">
+            <div class="l-4 xs-6">
                 <!-- small box -->
-                <div class="small-box bg-aqua">
+                <div class="small-box bg-info">
                     <div class="inner">
                         <h3>
-                            150
+                            {!! $countTodayPosts !!}
                         </h3>
                         <p>
-                            New Orders
+                            Today's posts
                         </p>
                     </div>
                     <div class="icon">
-                        <i class="ion ion-bag"></i>
+                        <i class="icon-pencil"></i>
                     </div>
-                    <a href="#" class="small-box-footer">
-                        More info <i class="fa fa-arrow-circle-right"></i>
+                    <a href="{{route('itway::posts::index')}}" class="small-box-footer">
+                        More info <i class="icon-arrow-circle-right"></i>
                     </a>
                 </div>
             </div><!-- ./col -->
-            <div class="l-3 xs-6">
+
+            <div class="l-4 xs-6">
                 <!-- small box -->
-                <div class="small-box bg-green">
+                <div class="small-box bg-warning">
                     <div class="inner">
                         <h3>
-                            53<sup style="font-size: 20px">%</sup>
-                        </h3>
-                        <p>
-                            Bounce Rate
-                        </p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-stats-bars"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">
-                        More info <i class="fa fa-arrow-circle-right"></i>
-                    </a>
-                </div>
-            </div><!-- ./col -->
-            <div class="l-3 xs-6">
-                <!-- small box -->
-                <div class="small-box bg-yellow">
-                    <div class="inner">
-                        <h3>
-                            44
+                           {{itway\User::all()->count()}}
                         </h3>
                         <p>
                             User Registrations
                         </p>
                     </div>
                     <div class="icon">
-                        <i class="ion ion-person-add"></i>
+                        <i class="icon-user"></i>
                     </div>
                     <a href="#" class="small-box-footer">
-                        More info <i class="fa fa-arrow-circle-right"></i>
+                        More info <i class="icon-arrow-circle-right"></i>
                     </a>
                 </div>
             </div><!-- ./col -->
-            <div class="l-3 xs-6">
+            <div class="l-4 xs-6">
                 <!-- small box -->
-                <div class="small-box bg-red">
+                <div class="small-box bg-success">
                     <div class="inner">
                         <h3>
-                            65
+
+                            {!! Visitor::count() !!}
                         </h3>
                         <p>
                             Unique Visitors
                         </p>
                     </div>
                     <div class="icon">
-                        <i class="ion ion-pie-graph"></i>
+                        <i class="icon-pie-chart"></i>
                     </div>
                     <a href="#" class="small-box-footer">
-                        More info <i class="fa fa-arrow-circle-right"></i>
+                        More info <i class="icon-arrow-circle-right"></i>
                     </a>
                 </div>
             </div><!-- ./col -->

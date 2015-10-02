@@ -11,6 +11,7 @@ use Itway\Validation\User\UsersFormRequest;
 use Itway\Validation\User\UsersUpdateFormRequest;
 use Request;
 use itway\Post;
+use Toastr;
 
 class AdminUsersController extends Controller {
 
@@ -161,12 +162,12 @@ class AdminUsersController extends Controller {
 
             if(''.\Auth::user()->id === $id) {
 
-                \Toastr::error('Can\'t be deleted!', $title = $username, $options = []);
+                Toastr::error('Can\'t be deleted!', $title = $username, $options = []);
 
                 return redirect()->back();
             }
             else {
-                \Toastr::success('User deleted!', $title = $username, $options = []);
+                Toastr::success('User deleted!', $title = $username, $options = []);
 
                 $this->userRepository->delete($id);
             }
@@ -184,7 +185,7 @@ class AdminUsersController extends Controller {
 
             if(''.\Auth::user()->id === $id) {
 
-                \Toastr::error('Can\'t be banned!', $title = $username, $options = []);
+                Toastr::error('Can\'t be banned!', $title = $username, $options = []);
 
                 return redirect()->back();
             }

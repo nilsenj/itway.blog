@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5a03fe6df507f7290e5c1e1fb49a0ced",
-    "content-hash": "8139d5c426cb7883905cbf53a82d5276",
+    "hash": "908cde08f33ff0a28f0e6f81996532b6",
+    "content-hash": "d452ae09a9fc26e535e3a4df9136600e",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -491,6 +491,58 @@
                 "string"
             ],
             "time": "2014-12-20 21:24:13"
+        },
+        {
+            "name": "geoip2/geoip2",
+            "version": "v2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maxmind/GeoIP2-php.git",
+                "reference": "01f58d749b715f30c99d1b19a965ce5b93813656"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxmind/GeoIP2-php/zipball/01f58d749b715f30c99d1b19a965ce5b93813656",
+                "reference": "01f58d749b715f30c99d1b19a965ce5b93813656",
+                "shasum": ""
+            },
+            "require": {
+                "guzzle/guzzle": "3.*",
+                "maxmind-db/reader": "~1.0",
+                "php": ">=5.3.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.2.*",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "GeoIp2": "src/",
+                    "JsonSerializable": "compat/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gregory J. Oschwald",
+                    "email": "goschwald@maxmind.com",
+                    "homepage": "http://www.maxmind.com/"
+                }
+            ],
+            "description": "MaxMind GeoIP2 PHP API",
+            "homepage": "https://github.com/maxmind/GeoIP2-php",
+            "keywords": [
+                "IP",
+                "geoip",
+                "geoip2",
+                "geolocation",
+                "maxmind"
+            ],
+            "time": "2014-12-03 14:59:16"
         },
         {
             "name": "google/apiclient",
@@ -1096,6 +1148,48 @@
             "time": "2015-04-20 18:58:01"
         },
         {
+            "name": "jalle19/php-whitelist-check",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Jalle19/php-whitelist-check.git",
+                "reference": "23723dc413fc36a7912323d3c1855bb1f5baef3a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Jalle19/php-whitelist-check/zipball/23723dc413fc36a7912323d3c1855bb1f5baef3a",
+                "reference": "23723dc413fc36a7912323d3c1855bb1f5baef3a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "xrstf/ip-utils": "1.*@dev"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Whitelist\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "description": "Provides a simple way to check whether an address or domain is on a whitelist",
+            "homepage": "https://github.com/Jalle19/php-whitelist-check",
+            "keywords": [
+                "cidr",
+                "ipv4",
+                "ipv6",
+                "whitelist"
+            ],
+            "time": "2014-05-11 16:35:28"
+        },
+        {
             "name": "jeremeamia/SuperClosure",
             "version": "2.1.0",
             "source": {
@@ -1239,16 +1333,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.1.17",
+            "version": "v5.1.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "415b5d824e15ee7cd18b8b23f96ae32b0b51d6a0"
+                "reference": "45e181369991579dc3ad015665eabbb72c0fadba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/415b5d824e15ee7cd18b8b23f96ae32b0b51d6a0",
-                "reference": "415b5d824e15ee7cd18b8b23f96ae32b0b51d6a0",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/45e181369991579dc3ad015665eabbb72c0fadba",
+                "reference": "45e181369991579dc3ad015665eabbb72c0fadba",
                 "shasum": ""
             },
             "require": {
@@ -1363,7 +1457,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-09-16 16:57:12"
+            "time": "2015-10-01 18:32:48"
         },
         {
             "name": "laravel/socialite",
@@ -1421,16 +1515,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.14",
+            "version": "1.0.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "202c7775d959f377e2e302d93e7127c47604438a"
+                "reference": "31525caf9e8772683672fefd8a1ca0c0736020f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/202c7775d959f377e2e302d93e7127c47604438a",
-                "reference": "202c7775d959f377e2e302d93e7127c47604438a",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/31525caf9e8772683672fefd8a1ca0c0736020f4",
+                "reference": "31525caf9e8772683672fefd8a1ca0c0736020f4",
                 "shasum": ""
             },
             "require": {
@@ -1501,7 +1595,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2015-09-22 19:18:28"
+            "time": "2015-09-30 22:26:59"
         },
         {
             "name": "league/oauth1-client",
@@ -1565,6 +1659,55 @@
                 "twitter"
             ],
             "time": "2015-08-22 09:49:14"
+        },
+        {
+            "name": "maxmind-db/reader",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maxmind/MaxMind-DB-Reader-php.git",
+                "reference": "07f211ab596ba60f9663d9984b888f76ee1beac9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxmind/MaxMind-DB-Reader-php/zipball/07f211ab596ba60f9663d9984b888f76ee1beac9",
+                "reference": "07f211ab596ba60f9663d9984b888f76ee1beac9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.2.*",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "MaxMind": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gregory J. Oschwald",
+                    "email": "goschwald@maxmind.com",
+                    "homepage": "http://www.maxmind.com/"
+                }
+            ],
+            "description": "MaxMind DB Reader API",
+            "homepage": "https://github.com/maxmind/MaxMind-DB-Reader-php",
+            "keywords": [
+                "database",
+                "geoip",
+                "geoip2",
+                "geolocation",
+                "maxmind"
+            ],
+            "time": "2015-03-13 22:35:13"
         },
         {
             "name": "monolog/monolog",
@@ -1825,6 +1968,55 @@
                 "php"
             ],
             "time": "2015-09-19 14:15:08"
+        },
+        {
+            "name": "nilsenj/toastr-5.1-laravel",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nilsenj/toastr-5.1-laravel.git",
+                "reference": "d365c405e37705fff60094c7c9efaa11783bde0f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nilsenj/toastr-5.1-laravel/zipball/d365c405e37705fff60094c7c9efaa11783bde0f",
+                "reference": "d365c405e37705fff60094c7c9efaa11783bde0f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/session": ">=5.0.0",
+                "illuminate/support": ">=5.0.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "nilsenj\\Toastr\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kamal Nasser",
+                    "email": "kamal@kamalnasser.net"
+                },
+                {
+                    "name": "Ivan Nikolenko",
+                    "email": "ni_cole@i.ua"
+                }
+            ],
+            "description": "toastr.js for Laravel 5.1 easy notification like growl for example",
+            "homepage": "https://github.com/nilsenj/toastr-5.1-laravel",
+            "keywords": [
+                "laravel",
+                "notification",
+                "php",
+                "toastr"
+            ],
+            "time": "2015-10-02 14:24:33"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -3091,6 +3283,105 @@
             "time": "2015-05-30 15:59:26"
         },
         {
+            "name": "weboap/visitor",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/weboAp/Visitor.git",
+                "reference": "81c9ed4f9b0cf3f3f57e4f74a4ff9c26b66712e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/weboAp/Visitor/zipball/81c9ed4f9b0cf3f3f57e4f74a4ff9c26b66712e7",
+                "reference": "81c9ed4f9b0cf3f3f57e4f74a4ff9c26b66712e7",
+                "shasum": ""
+            },
+            "require": {
+                "geoip2/geoip2": "2.1.1",
+                "illuminate/support": "~5.0",
+                "jalle19/php-whitelist-check": "1.0.4",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Weboap\\Visitor\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "weboap",
+                    "email": "weboap@gmail.com"
+                }
+            ],
+            "description": "log your visitors in db, page hits, and generate visit counter for Laravel 5",
+            "keywords": [
+                "clicks",
+                "counter",
+                "framework",
+                "hits",
+                "laravel",
+                "log",
+                "visitors"
+            ],
+            "time": "2015-06-28 23:07:18"
+        },
+        {
+            "name": "xrstf/ip-utils",
+            "version": "v1.1.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/xrstf/ip-utils",
+                "reference": "77208641fa9e6063ccb00c8899d157818ad2474f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/xrstf/ip-utils/get/77208641fa9e6063ccb00c8899d157818ad2474f.zip",
+                "reference": "77208641fa9e6063ccb00c8899d157818ad2474f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-default": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "IpUtils\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christoph Mewes",
+                    "homepage": "http://www.xrstf.de/"
+                }
+            ],
+            "description": "small library to deal with IPv4 & IPv6 addresses and subnets",
+            "keywords": [
+                "IP",
+                "ipv4",
+                "ipv6",
+                "matching",
+                "subnet"
+            ],
+            "time": "2013-12-04 01:57:13"
+        },
+        {
             "name": "zizaco/entrust",
             "version": "dev-laravel-5",
             "source": {
@@ -3778,55 +4069,6 @@
             "time": "2015-04-02 19:54:00"
         },
         {
-            "name": "nilsenj/toastr-5.1-laravel",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nilsenj/toastr-5.1-laravel.git",
-                "reference": "43297b9f964eefdef1b2cd6ec6a57c2ab0372416"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nilsenj/toastr-5.1-laravel/zipball/43297b9f964eefdef1b2cd6ec6a57c2ab0372416",
-                "reference": "43297b9f964eefdef1b2cd6ec6a57c2ab0372416",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/session": ">=5.0.0",
-                "illuminate/support": ">=5.0.0",
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "nilsenj\\Toastr\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kamal Nasser",
-                    "email": "kamal@kamalnasser.net"
-                },
-                {
-                    "name": "Ivan Nikolenko",
-                    "email": "ni_cole@i.ua"
-                }
-            ],
-            "description": "toastr.js for Laravel 5.1 easy notification like growl for example",
-            "homepage": "https://github.com/nilsenj/toastr-5.1-laravel",
-            "keywords": [
-                "laravel",
-                "notification",
-                "php",
-                "toastr"
-            ],
-            "time": "2015-08-05 22:10:41"
-        },
-        {
             "name": "phpspec/php-diff",
             "version": "v1.0.2",
             "source": {
@@ -4239,16 +4481,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.9",
+            "version": "4.8.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "73fad41adb5b7bc3a494bb930d90648df1d5e74b"
+                "reference": "463163747474815c5ccd4ae12b5b355ec12158e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/73fad41adb5b7bc3a494bb930d90648df1d5e74b",
-                "reference": "73fad41adb5b7bc3a494bb930d90648df1d5e74b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/463163747474815c5ccd4ae12b5b355ec12158e8",
+                "reference": "463163747474815c5ccd4ae12b5b355ec12158e8",
                 "shasum": ""
             },
             "require": {
@@ -4307,20 +4549,20 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-09-20 12:56:44"
+            "time": "2015-10-01 09:14:30"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "2.3.7",
+            "version": "2.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "5e2645ad49d196e020b85598d7c97e482725786a"
+                "reference": "ac8e7a3db35738d56ee9a76e78a4e03d97628983"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/5e2645ad49d196e020b85598d7c97e482725786a",
-                "reference": "5e2645ad49d196e020b85598d7c97e482725786a",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/ac8e7a3db35738d56ee9a76e78a4e03d97628983",
+                "reference": "ac8e7a3db35738d56ee9a76e78a4e03d97628983",
                 "shasum": ""
             },
             "require": {
@@ -4363,7 +4605,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2015-08-19 09:14:08"
+            "time": "2015-10-02 06:51:40"
         },
         {
             "name": "potsky/laravel-localization-helpers",
@@ -4835,8 +5077,9 @@
         "zizaco/entrust": 20,
         "cviebrock/image-validator": 10,
         "mpociot/teamwork": 20,
-        "doctrine/dbal": 20,
-        "nilsenj/toastr-5.1-laravel": 20
+        "nilsenj/toastr-5.1-laravel": 20,
+        "weboap/visitor": 20,
+        "doctrine/dbal": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

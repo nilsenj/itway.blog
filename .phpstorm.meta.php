@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2015-09-30.
+    * Generated on 2015-10-02.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -52,6 +52,12 @@ namespace PHPSTORM_META {
             'command.entrust.classes' instanceof \Zizaco\Entrust\ClassCreatorCommand,
             'toastr' instanceof \nilsenj\Toastr\Toastr,
             'teamwork' instanceof \Mpociot\Teamwork\Teamwork,
+            'Weboap\Visitor\Storage\VisitorInterface' instanceof \Weboap\Visitor\Storage\QbVisitorRepository,
+            'Weboap\Visitor\Services\Geo\GeoInterface' instanceof \Weboap\Visitor\Services\Geo\MaxMind,
+            'Weboap\Visitor\Services\Cache\CacheInterface' instanceof \Weboap\Visitor\Services\Cache\CacheClass,
+            'ip' instanceof \Weboap\Visitor\Ip,
+            'visitor' instanceof \Weboap\Visitor\Visitor,
+            'Weboap\Visitor\Visitor' instanceof \Weboap\Visitor\Visitor,
             'Itway\Repositories\Auth\UserContract' instanceof \Itway\Repositories\Auth\EloquentUserRepository,
             'Itway\Repositories\Posts\PostsRepository' instanceof \Itway\Repositories\Posts\EloquentPostsRepository,
             'Itway\Repositories\Roles\RolesRepository' instanceof \Itway\Repositories\Roles\EloquentRolesRepository,
@@ -190,6 +196,12 @@ namespace PHPSTORM_META {
             'command.entrust.classes' instanceof \Zizaco\Entrust\ClassCreatorCommand,
             'toastr' instanceof \nilsenj\Toastr\Toastr,
             'teamwork' instanceof \Mpociot\Teamwork\Teamwork,
+            'Weboap\Visitor\Storage\VisitorInterface' instanceof \Weboap\Visitor\Storage\QbVisitorRepository,
+            'Weboap\Visitor\Services\Geo\GeoInterface' instanceof \Weboap\Visitor\Services\Geo\MaxMind,
+            'Weboap\Visitor\Services\Cache\CacheInterface' instanceof \Weboap\Visitor\Services\Cache\CacheClass,
+            'ip' instanceof \Weboap\Visitor\Ip,
+            'visitor' instanceof \Weboap\Visitor\Visitor,
+            'Weboap\Visitor\Visitor' instanceof \Weboap\Visitor\Visitor,
             'Itway\Repositories\Auth\UserContract' instanceof \Itway\Repositories\Auth\EloquentUserRepository,
             'Itway\Repositories\Posts\PostsRepository' instanceof \Itway\Repositories\Posts\EloquentPostsRepository,
             'Itway\Repositories\Roles\RolesRepository' instanceof \Itway\Repositories\Roles\EloquentRolesRepository,
@@ -328,6 +340,12 @@ namespace PHPSTORM_META {
             'command.entrust.classes' instanceof \Zizaco\Entrust\ClassCreatorCommand,
             'toastr' instanceof \nilsenj\Toastr\Toastr,
             'teamwork' instanceof \Mpociot\Teamwork\Teamwork,
+            'Weboap\Visitor\Storage\VisitorInterface' instanceof \Weboap\Visitor\Storage\QbVisitorRepository,
+            'Weboap\Visitor\Services\Geo\GeoInterface' instanceof \Weboap\Visitor\Services\Geo\MaxMind,
+            'Weboap\Visitor\Services\Cache\CacheInterface' instanceof \Weboap\Visitor\Services\Cache\CacheClass,
+            'ip' instanceof \Weboap\Visitor\Ip,
+            'visitor' instanceof \Weboap\Visitor\Visitor,
+            'Weboap\Visitor\Visitor' instanceof \Weboap\Visitor\Visitor,
             'Itway\Repositories\Auth\UserContract' instanceof \Itway\Repositories\Auth\EloquentUserRepository,
             'Itway\Repositories\Posts\PostsRepository' instanceof \Itway\Repositories\Posts\EloquentPostsRepository,
             'Itway\Repositories\Roles\RolesRepository' instanceof \Itway\Repositories\Roles\EloquentRolesRepository,
@@ -466,6 +484,12 @@ namespace PHPSTORM_META {
             'command.entrust.classes' instanceof \Zizaco\Entrust\ClassCreatorCommand,
             'toastr' instanceof \nilsenj\Toastr\Toastr,
             'teamwork' instanceof \Mpociot\Teamwork\Teamwork,
+            'Weboap\Visitor\Storage\VisitorInterface' instanceof \Weboap\Visitor\Storage\QbVisitorRepository,
+            'Weboap\Visitor\Services\Geo\GeoInterface' instanceof \Weboap\Visitor\Services\Geo\MaxMind,
+            'Weboap\Visitor\Services\Cache\CacheInterface' instanceof \Weboap\Visitor\Services\Cache\CacheClass,
+            'ip' instanceof \Weboap\Visitor\Ip,
+            'visitor' instanceof \Weboap\Visitor\Visitor,
+            'Weboap\Visitor\Visitor' instanceof \Weboap\Visitor\Visitor,
             'Itway\Repositories\Auth\UserContract' instanceof \Itway\Repositories\Auth\EloquentUserRepository,
             'Itway\Repositories\Posts\PostsRepository' instanceof \Itway\Repositories\Posts\EloquentPostsRepository,
             'Itway\Repositories\Roles\RolesRepository' instanceof \Itway\Repositories\Roles\EloquentRolesRepository,

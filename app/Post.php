@@ -34,7 +34,8 @@ class Post extends Model implements SluggableInterface, Likeable{
         'body',
         'published_at',
         'comment_count',
-        'locale'
+        'locale',
+        'date'
     ];
     protected $searchable = [
         'columns' => [
@@ -60,11 +61,15 @@ class Post extends Model implements SluggableInterface, Likeable{
     const imagePath =  'images/posts/';
 
     public function setPublishedAtAttribute ($date) {
+
         $this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d', $date);
+
     }
 
     public function getLocaledAtAttribute (Request $request) {
+
         $this->attributes['locale'] = $request->getLocale();
+
     }
 
     public function scopePublished($query) {
@@ -86,8 +91,16 @@ class Post extends Model implements SluggableInterface, Likeable{
         $query->where('published_at', '>', Carbon::now());
     }
 
+    public function scopeToday($query) {
+
+        $query->where('date', '=', Carbon::today());
+
+    }
+
     public function setRawAttribute($body) {
+
         $this->attributes['body'] = htmlspecialchars_decode($body);
+
     }
 
     public function user() {

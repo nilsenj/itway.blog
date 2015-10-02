@@ -22,7 +22,11 @@
         "cviebrock/image-validator": "2.0.*@beta",
         "mpociot/teamwork": "dev-master",
         "codezero/mailer": "^1.0",
-        "spatie/laravel-analytics": "^1.2"
+        "spatie/laravel-analytics": "^1.2",
+        "nilsenj/toastr-5.1-laravel":"dev-master",
+        "weboap/visitor": "dev-master"
+
+
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -30,8 +34,7 @@
         "phpunit/phpunit": "~4.0",
         "phpspec/phpspec": "~2.1",
         "doctrine/dbal": "^2.6@dev",
-        "potsky/laravel-localization-helpers" : "~1.1",
-        "nilsenj/toastr-5.1-laravel":"dev-master"
+        "potsky/laravel-localization-helpers" : "~1.1"
     },
     "autoload": {
         "classmap": [

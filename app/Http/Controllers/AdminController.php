@@ -5,9 +5,15 @@ namespace itway\Http\Controllers;
 use Illuminate\Http\Request;
 use itway\Http\Requests;
 use itway\Http\Controllers\Controller;
+use Itway\Repositories\Posts\PostsRepository;
 
 class AdminController extends Controller
 {
+    public $postsRepository;
+
+    public function __construct(PostsRepository $postsRepository){
+        $this->postsRepository = $postsRepository;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +21,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        $countTodayPosts = $this->postsRepository->todayPosts();
+
+        return view('admin.dashboard', compact('countTodayPosts'));
     }
 
     /**

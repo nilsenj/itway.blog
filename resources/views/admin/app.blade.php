@@ -7,12 +7,9 @@
     <div class="container wrapper">
         <div class="content-wrapper">
             @include('includes.notifier-panel')
-            {{--<div class="container-fluid">--}}
-            {{--@include('includes.subnavigation')--}}
-            {{--</div>--}}
+
 
             <div>
-                {{--@include('includes.site-location')--}}
             </div>
             <div class="clearfix"></div>
             @include('includes.search')

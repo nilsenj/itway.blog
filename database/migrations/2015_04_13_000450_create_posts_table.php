@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Carbon\Carbon;
 
 class CreatePostsTable extends Migration {
 
@@ -25,6 +26,7 @@ class CreatePostsTable extends Migration {
             $table->integer('comment_count')->unsigned();
 			$table->timestamps();
 			$table->timestamp('published_at');
+			$table->timestamp('date')->default(Carbon::today());
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 		});
 	}
