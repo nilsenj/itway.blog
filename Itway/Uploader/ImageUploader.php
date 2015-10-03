@@ -95,6 +95,25 @@ class ImageUploader
 
         return $this;
     }
+    public function uploadAvatar($file, $path)
+    {
+
+        $this->filename = $this->getRandomFilename();
+
+        $this->path = $path;
+
+        if (! is_dir($path = $this->getDestinationDirectory())) {
+
+            File::makeDirectory($path, 0777, true);
+
+        }
+
+        $this->image = Image::make($file->getRealPath())->fit(150);
+
+
+        return $this;
+    }
+
     public function getDestinationDirectory()
     {
         return dirname($this->getDestinationFile());

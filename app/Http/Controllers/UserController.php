@@ -151,7 +151,7 @@ class UserController extends Controller {
 
             $imagesPath = 'images/users';
 
-            $this->uploader->upload($image, $imagesPath)->save($imagesPath);
+            $this->uploader->uploadAvatar($image, $imagesPath)->save($imagesPath);
 
             if ($user->picture()) {
 
