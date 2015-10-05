@@ -9,7 +9,7 @@
 7. after everything is done don't relax --- we haven't done yet.
 8. to have availability of asynchronous features such as new post created and user was registered event install redis and then launch it and run node socket.js
 9. that's it you have availability to use events.
-
+10. do all the stuff you need to launch this app  do composer update, artisan migrate, artisan db:seed, artisan serve
 
 #### what kind of features you can have
 
