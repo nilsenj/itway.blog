@@ -14,6 +14,7 @@ use Illuminate\Contracts\Bus\SelfHandling;
 use Auth;
 use itway\Events\UserWasCreatedEvent;
 use itway\User;
+use App;
 class CreateUserCommand  extends Command implements SelfHandling
 {
     public $name,
@@ -58,7 +59,8 @@ class CreateUserCommand  extends Command implements SelfHandling
             'photo' => $this->photo,
             'provider' => $this->provider,
             'provider_id' => $this->provider_id,
-            'password' => $this->password
+            'password' => $this->password,
+            'locale' => App::getLocale()
 
         ]);
 

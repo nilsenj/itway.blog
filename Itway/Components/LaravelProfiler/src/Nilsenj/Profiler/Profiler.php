@@ -23,6 +23,7 @@ class Profiler {
             return false;
         }
         else{
+
             Session::flash('nilsenj.profiler.start', $this->getTime());
 
         }
@@ -39,7 +40,7 @@ class Profiler {
                     'nilsenj.profiler.data',
                     (object) [
                         'project_code'  => config('profiler.project_code'),
-                        'url'           => Request::path(),
+                        'url'           => Request::url(),
                         'method'        => Request::method(),
                         'controller'    => get_class($data),
                         'route'         => Route::currentRouteName(),
@@ -47,7 +48,7 @@ class Profiler {
                         'agent'         => isset($_SERVER["HTTP_USER_AGENT"]) ? $_SERVER["HTTP_USER_AGENT"] : null,
                         'referer'       => isset($_SERVER["HTTP_REFERER"]) ? $_SERVER["HTTP_REFERER"] : null,
                         'cookie'        => Cookie::get(config('session.cookie')),
-                        'request_body'  => $this->isHasSecretContent(Request::instance()->getContent(), Request::path()),
+                        'request_body'  => $this->isHasSecretContent(Request::instance()->getContent(), Request::url()),
                         'request_data'  => (Input::all()) ? $this->isHasSecretContent(json_encode(Input::all()), Request::path()) : null,
                         'ip_address'    => Request::getClientIp(),
                     ]
